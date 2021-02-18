@@ -18,33 +18,36 @@ import matplotlib.pyplot as plt
 # Date: 2/17/2021
 # ========================================
 
-## -- Set up the initial map area and save it as a networkx graph
+# -- Set up the initial map area and save it as a networkx graph
 ox.config(log_console=True, use_cache=True)
-G = ox.graph_from_address('1276 Gilbreath Drive, Johnson City, Washington County, Tennessee, 37614, United States', dist=8000, network_type='drive')
+G = ox.graph_from_address(
+    '1276 Gilbreath Drive, Johnson City, Washington County, Tennessee, 37614, United States',
+    dist=8000, network_type='drive')
 
-### Use this code to display a plot of the graph if desired. Note: You need to import matplotlib.pyplot as plt
+# Use this code to display a plot of the graph if desired. Note: You need to import matplotlib.pyplot as plt
 # fig, ax = ox.plot_graph(G, edge_linewidth=3, node_size=0, show=False, close=False)
 # plt.show()
 
-## -- Genetic Algorithm Parameters
+# -- Genetic Algorithm Parameters
 GENERATIONS = 1000
 POPULATION_SIZE = 200
 MUTATION_RATE = 0.1
 DISPLAY_RATE = 100
 
-## -- Set up Origin and Destination Points
-origin_point = (36.3044549, -82.3632187) # Start at ETSU
-destination_point= (36.3044549,	-82.3632187) # End at ETSU
+# -- Set up Origin and Destination Points
+origin_point = (36.3044549, -82.3632187)  # Start at ETSU
+destination_point = (36.3044549, -82.3632187)  # End at ETSU
 origin = ox.get_nearest_node(G, origin_point)
 destination = ox.get_nearest_node(G, destination_point)
 origin_node = (origin, G.nodes[origin])
 destination_node = (destination, G.nodes[destination])
 
-## -- Set up initial lists
+# -- Set up initial lists
 points = []                 # The list of osmnx nodes that can be used for map plotting
 generations = []            # A list of populations, ultimately of size GENERATIONS
 population = []             # The current population of size POPULATION_SIZE
-chromosome = []             # Represented as a list of index values that correspond to the points list
+# Represented as a list of index values that correspond to the points list
+chromosome = []
 
 
 def plot_path(lat, long, origin_point, destination_point, fitness):
@@ -74,7 +77,7 @@ def plot_path(lat, long, origin_point, destination_point, fitness):
         marker=go.scattermapbox.Marker(
             size=9
         ),
-        text=[str(i) for i in range(1,len(long))],
+        text=[str(i) for i in range(1, len(long))],
         line=dict(width=4.5, color='blue')))
     # adding source marker
     fig.add_trace(go.Scattermapbox(
@@ -114,24 +117,28 @@ def plot_ga():
     gen = 1
     for g in generations:
         best_route = g[0]
-        worst_route = g[POPULATION_SIZE-1]
+        worst_route = g[POPULATION_SIZE - 1]
         best.append(best_route[1])
         worst.append(worst_route[1])
         generation_values.append(gen)
-        gen = gen+1
-    data = { 'Generations':generation_values, 'Best':best,'Worst':worst }
+        gen = gen + 1
+    data = {'Generations': generation_values, 'Best': best, 'Worst': worst}
     df = pandas.DataFrame(data)
-    fig = px.line(df, x="Generations", y=["Best","Worst"], title="Fitness Across Generations")
+    fig = px.line(df, x="Generations", y=[
+                  "Best", "Worst"], title="Fitness Across Generations")
     fig.show()
-
-
 
 
 def haversine(point1, point2):
     """
     Returns the Great Circle Distance between point 1 and point 2 in miles
     """
-    return ox.distance.great_circle_vec(G.nodes[point1]['y'], G.nodes[point1]['x'], G.nodes[point2]['y'], G.nodes[point2]['x'], 3963.1906)
+    return ox.distance.great_circle_vec(
+        G.nodes[point1]['y'],
+        G.nodes[point1]['x'],
+        G.nodes[point2]['y'],
+        G.nodes[point2]['x'],
+        3963.1906)
 
 
 def calculate_fitness(chromosome):
@@ -140,10 +147,10 @@ def calculate_fitness(chromosome):
     The GA should attempt to minimize the fitness; minimal fitness => best fitness
     """
     fitness = 0.0
-    return [chromosome,fitness]
+    return [chromosome, fitness]
 
 
-## initialize population
+# initialize population
 def initialize_population():
     """
     Initialize the population by creating POPULATION_SIZE chromosomes.
@@ -175,7 +182,7 @@ def selection(gen):
     return parent1, parent2
 
 
-def crossover(p1,p2):
+def crossover(p1, p2):
     """
     Strategy: ...
     """
@@ -198,10 +205,12 @@ def run_ga():
     """
     initialize_population()
 
-    for gen in range(GENERATIONS-1):      #Note, you already ran generation 1
-        repopulate(gen+1)
+    for gen in range(GENERATIONS - 1):  # Note, you already ran generation 1
+        repopulate(gen + 1)
         if gen % DISPLAY_RATE == 0:
-            print("Generation Stuff") # Print the generation, and the best (lowest) fitness score in the population for that generation
+            # Print the generation, and the best (lowest) fitness score in the
+            # population for that generation
+            print("Generation Stuff")
 
 
 def show_route(generation_number):
@@ -226,8 +235,8 @@ def show_route(generation_number):
     route.append(startend[0])
     lat.append(startend[1]["y"])
     long.append(startend[1]["x"])
-    plot_path(lat,long,origin_node,destination_node,the_fitness)
-    print("The fitness for generation",generation_number,"was",the_fitness)
+    plot_path(lat, long, origin_node, destination_node, the_fitness)
+    print("The fitness for generation", generation_number, "was", the_fitness)
 
 
 def main():
@@ -239,20 +248,20 @@ def main():
         csvFile = csv.reader(file)
 
         for xy in csvFile:
-            point_coordinates = (float(xy[0]),float(xy[1]))
+            point_coordinates = (float(xy[0]), float(xy[1]))
             point = ox.get_nearest_node(G, point_coordinates)
             point_node = (point, G.nodes[point])
             if point_node not in points:
                 points.append(point_node)
 
-    print("There were",len(points),"unique points found.")
+    print("There were", len(points), "unique points found.")
 
     run_ga()
-    #show_route(0)
-    #show_route(math.floor(GENERATIONS/2))
-    #show_route(GENERATIONS-1)
+    # show_route(0)
+    # show_route(math.floor(GENERATIONS/2))
+    # show_route(GENERATIONS-1)
 
-    #plot_ga()
+    # plot_ga()
 
 
 main()
