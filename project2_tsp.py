@@ -198,6 +198,7 @@ def initialize_population():
         # ! Read the ? section below to understand the [1] at the end of the line
         fitness = calculate_fitness(newChromosome)[1]
         # Make a tuple
+        # FIXME: Same tuple is split then immediately reassembled
         # ? This step is a little unnecessary since calculate_fitness() already
         # ? returns a tuple in the form (chromosome, fitness), but for now, I
         # ? feel this setup is easier to read.
