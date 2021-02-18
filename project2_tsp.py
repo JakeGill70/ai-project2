@@ -220,6 +220,22 @@ def repopulate(gen):
     and adds it to the generations list.
     """
     my_population = []
+    previousPopulation = gen
+
+    # Ensure you keep the top 5% of the previous generation
+    retain = math.ceil(POPULATION_SIZE*0.05)
+    my_population = previousPopulation[:retain]
+
+    # Fill up the rest of the population
+    while len(my_population) < POPULATION_SIZE:
+        parentA, parentB = selection(previousPopulation)
+        child = crossover(parentA, parentB)
+        if(random.random() <= MUTATION_RATE):
+            child = mutate(child)
+        my_population.append(calculate_fitness(child))
+
+    # Order the population by fitness
+    my_population.sort(key=lambda x: x[1])
 
     generations.append(my_population)
 
