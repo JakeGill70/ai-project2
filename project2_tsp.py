@@ -250,9 +250,34 @@ def selection(gen):
 
 def crossover(p1, p2):
     """
-    Strategy: ...
+    Strategy: Use two crossover points to insert a central segment 
+      from the 2nd parent into the 1st parent. The 1st crossover 
+      point is guranteed to be in the 1st half of the chromosome, 
+      but the 2nd crossover point is only guranteed to be after the 
+      first. Therefore, the algorithm could theorically only exchange 
+      a single gene, or only genes in the first half of the chromosome.
     """
     child = []
+
+    # Get the size of a chromosome
+    chromosomeSize = len(p1)
+
+    # Choose a crossover point from the first half of the chromosome
+    crossOverPoint1 = random.randint(0, chromosomeSize/2)
+    # Choose a 2nd crossover point after the first
+    crossOverPoint2 = random.randint(
+        crossOverPoint1 + 1, chromosomeSize)
+
+    # *** Create Child ***
+    # Copy from the first parent up to the first crossover point
+    for i in range(0, crossOverPoint1):
+        child.append(p1[i])
+    # Copy from the second parent up to the second crossover point
+    for i in range(crossOverPoint1, crossOverPoint2):
+        child.append(p2[i])
+    # Copy from the first parent up to the end of the chromosome
+    for i in range(crossOverPoint1, chromosomeSize):
+        child.append(p2[i])
 
     return child
 
