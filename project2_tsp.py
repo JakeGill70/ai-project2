@@ -159,6 +159,28 @@ def initialize_population():
     """
     my_population = []
 
+    # Create a new chromosome for every entry in the population
+    for c in range(POPULATION_SIZE):
+        # Make a new chromosome where each item in the chromosome represents an
+        # index in the list of points.
+        chromosomeSize = len(points)
+        newChromosome = [i for i in range(chromosomeSize)]
+        # Jumble up the chromosome
+        random.shuffle(newChromosome)
+        # Calculate the fitness
+        # ! Read the ? section below to understand the [1] at the end of the line
+        fitness = calculate_fitness(newChromosome)[1]
+        # Make a tuple
+        # ? This step is a little unnecessary since calculate_fitness() already
+        # ? returns a tuple in the form (chromosome, fitness), but for now, I
+        # ? feel this setup is easier to read.
+        pair = (newChromosome, fitness)
+        # Add the chromosome to population for this generation
+        my_population.append(pair)
+
+    # Order the population by fitness
+    my_population.sort(key=lambda x: x[1])
+
     generations.append(my_population)
 
 
