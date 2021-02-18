@@ -228,6 +228,23 @@ def selection(gen):
     Choose two parents and return their chromosomes
     """
     parent1, parent2 = None, None
+
+    # Using a pretty elitest strategy the picks a chromosome from the top
+    #  10%, then a 2nd chromosome from the top 70%. Note that the 2nd
+    #  chromosome could potentially also come from the top 10%.
+    firstParentPercentile = 0.1
+    secondParentPercentile = 0.7
+    firstParentIndex = random.randrange(0, round(len(gen) * firstParentPercentile))
+    secondParentIndex = random.randrange(0, round(len(gen) * secondParentPercentile))
+
+    # If the same parent is chosen, pick another
+    while firstParentIndex == secondParentIndex:
+        secondParentIndex = random.randrange(0, round(len(gen) * secondParentPercentile))
+
+    # Get the parents using the parent indices
+    parent1 = gen[firstParentIndex]
+    parent2 = gen[secondParentIndex]
+
     return parent1, parent2
 
 
