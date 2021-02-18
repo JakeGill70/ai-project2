@@ -38,7 +38,9 @@ DISPLAY_RATE = 100
 origin_point = (36.3044549, -82.3632187)  # Start at ETSU
 destination_point = (36.3044549, -82.3632187)  # End at ETSU
 origin = ox.get_nearest_node(G, origin_point)
+origin_id = origin
 destination = ox.get_nearest_node(G, destination_point)
+destination_id = destination
 origin_node = (origin, G.nodes[origin])
 destination_node = (destination, G.nodes[destination])
 
