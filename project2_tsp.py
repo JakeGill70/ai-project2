@@ -143,6 +143,13 @@ def haversine(point1, point2):
         3963.1906)
 
 
+def get_distance(nodeA_id, nodeB_id):
+    """
+    Wrapper for getting distance between two nodes
+    """
+    return haversine(nodeA_id, nodeB_id)
+
+
 def calculate_fitness(chromosome):
     """
     Fitness is the total route cost using the haversine distance.
