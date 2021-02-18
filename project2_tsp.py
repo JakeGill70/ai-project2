@@ -46,6 +46,7 @@ destination_node = (destination, G.nodes[destination])
 
 # -- Set up initial lists
 points = []                 # The list of osmnx nodes that can be used for map plotting
+# * Points format = [(nodeId, {street_count, x, y}), ...]
 generations = []            # A list of populations, ultimately of size GENERATIONS
 population = []             # The current population of size POPULATION_SIZE
 # Represented as a list of index values that correspond to the points list
@@ -155,7 +156,24 @@ def calculate_fitness(chromosome):
     Fitness is the total route cost using the haversine distance.
     The GA should attempt to minimize the fitness; minimal fitness => best fitness
     """
+    # ! Points format = [(nodeId, {street_count, x, y}), ...]
+
     fitness = 0.0
+
+    # Calculate the distance from the origin to the first node in the chromosome
+    firstNodeId = points[chromosome[0]][0]
+    fitness += get_distance(origin_id, firstNodeId)
+
+    # Calculate the distance between each node in the chromosome
+    for i in range(len(chromosome)-1):
+        nodeA_id = points[chromosome[i]][0]
+        nodeB_id = points[chromosome[i+1]][0]
+        fitness += get_distance(nodeA_id, nodeB_id)
+
+    # Calculate the distance from the destination to the last node in the chromosome
+    lastNodeId = points[chromosome[-1]][0]
+    fitness += get_distance(origin_id, lastNodeId)
+
     return [chromosome, fitness]
 
 
