@@ -283,11 +283,62 @@ def crossover(p1, p2):
     return child
 
 
-def mutate(chromosome):
+def swap_genes(i, j, chromosome):
     """
-    Strategy: swap two pairs of points. Return the chromosome after mutation.
+    Swap two genes in a chromosome (swap elements in a list by index)
+    """
+    e = chromosome[i]
+    chromosome[i] = chromosome[j]
+    chromosome[j] = e
+    return chromosome
+
+
+def mutate(chromosome, recursiveChance=0.5, majorMutationChance=0.5):
+    """
+    Strategy: Randomly choose between two mutation strategies: minor and major.
+      A minor mutation only swaps adjacent genes in a chromosome.
+      A major mutation swaps genes anywhere within a chromosome.
+      Lastly, mutations have a chance to recurse and generate more mutations.
+      Return the chromosome after mutation.
     """
     mutant_child = []
+
+    # FIXME: This code is easy to read, but VERY redudant.
+    #  Come back and fix this when convient.
+
+    # Start with an exact copy of the original chromosome
+    mutant_child = [x for x in chromosome]
+
+    # Determine if this is a major mutation
+    isMajorChange = (random.random() <= majorMutationChance)
+
+    if(isMajorChange):
+        # Pick a random genes to mutate
+        mutationIndex = random.randrange(len(chromosome))
+        otherIndex = random.randrange(len(chromosome))
+        # Make sure the genes aren't the same
+        while mutationIndex == otherIndex:
+            otherIndex = random.randrange(len(chromosome))
+        # Swap the genes at the random indices inside of the chromosome
+        swap_genes(mutationIndex, otherIndex, mutant_child)
+
+    else:  # if(isMinorChange)
+        # Pick a random gene to mutate
+        mutationIndex = random.randrange(len(chromosome))
+        # Randomly pick an adjacent gene to switch with
+        adjacentIndex = mutationIndex + (1 if bool(random.getrandbits(1)) else -1)
+        # Make sure the adjacentIndex is legal
+        if adjacentIndex > len(chromosome):
+            adjacentIndex -= 2
+        if adjacentIndex < 0:
+            adjacentIndex += 2
+        # Swap the genes at the random indices inside of the chromosome
+        swap_genes(mutationIndex, adjacentIndex, mutant_child)
+
+    # Check to recurse
+    if(random.random() <= recursiveChance):
+        mutant_child = mutate(mutant_child, recursiveChance/2)
+
     return mutant_child
 
 
