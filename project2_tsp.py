@@ -32,9 +32,9 @@ G = ox.graph_from_address(
 # -- Genetic Algorithm Parameters
 GENERATIONS = 1000
 POPULATION_SIZE = 200
-MUTATION_RATE = 0.1
+MUTATION_RATE = 0.6
 DISPLAY_RATE = 100
-RANDOM_SEED = time.time_ns()
+RANDOM_SEED = 1613732766088069000
 RANDOM = random.Random(RANDOM_SEED)
 
 # -- Set up Origin and Destination Points
@@ -315,7 +315,7 @@ def swap_genes(i, j, chromosome):
     return chromosome
 
 
-def mutate(chromosome, recursiveChance=0.5, majorMutationChance=0.5):
+def mutate(chromosome, recursiveChance=0.8, majorMutationChance=0.7):
     """
     Strategy: Randomly choose between two mutation strategies: minor and major.
       A minor mutation only swaps adjacent genes in a chromosome.
@@ -433,7 +433,7 @@ def show_route(generation_number):
     lat.append(startend[1]["y"])
     long.append(startend[1]["x"])
     plot_path(lat, long, origin_node, destination_node, the_fitness)
-    print("The fitness for generation", generation_number, "was", the_fitness)
+    #print("The fitness for generation", generation_number, "was", the_fitness)
 
 
 def main():
