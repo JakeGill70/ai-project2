@@ -434,6 +434,7 @@ def show_route(generation_number):
     long.append(startend[1]["x"])
     plot_path(lat, long, origin_node, destination_node, the_fitness)
     #print("The fitness for generation", generation_number, "was", the_fitness)
+    print(f"Latest Top Chromosome: {the_route}")
 
 
 def main():
@@ -459,9 +460,9 @@ def main():
     run_ga()
     # show_route(0)
     # show_route(math.floor(GENERATIONS/2))
-    # show_route(GENERATIONS-1)
+    show_route(GENERATIONS-1)
 
-    # plot_ga()
+    plot_ga()
 
 
 main()
