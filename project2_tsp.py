@@ -276,11 +276,14 @@ def crossover(p1, p2):
     """
     child = []
 
+    parentAChromosome = p1[0]
+    parentBChromosome = p2[0]
+
     # Get the size of a chromosome
-    chromosomeSize = len(p1)
+    chromosomeSize = len(parentAChromosome)
 
     # Choose a crossover point from the first half of the chromosome
-    crossOverPoint1 = random.randint(0, chromosomeSize/2)
+    crossOverPoint1 = random.randint(0, int(chromosomeSize/2))
     # Choose a 2nd crossover point after the first
     crossOverPoint2 = random.randint(
         crossOverPoint1 + 1, chromosomeSize)
@@ -288,13 +291,13 @@ def crossover(p1, p2):
     # *** Create Child ***
     # Copy from the first parent up to the first crossover point
     for i in range(0, crossOverPoint1):
-        child.append(p1[i])
+        child.append(parentAChromosome[i])
     # Copy from the second parent up to the second crossover point
     for i in range(crossOverPoint1, crossOverPoint2):
-        child.append(p2[i])
+        child.append(parentBChromosome[i])
     # Copy from the first parent up to the end of the chromosome
-    for i in range(crossOverPoint1, chromosomeSize):
-        child.append(p2[i])
+    for i in range(crossOverPoint2, chromosomeSize):
+        child.append(parentAChromosome[i])
 
     return child
 
