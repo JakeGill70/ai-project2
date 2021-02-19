@@ -220,7 +220,7 @@ def repopulate(gen):
     and adds it to the generations list.
     """
     my_population = []
-    previousPopulation = gen
+    previousPopulation = generations[gen-1]
 
     # Ensure you keep the top 5% of the previous generation
     retain = math.ceil(POPULATION_SIZE*0.05)
