@@ -332,7 +332,7 @@ def mutate(chromosome, recursiveChance=0.8, majorMutationChance=0.7):
     mutant_child = [x for x in chromosome]
 
     # Determine if this is a major mutation
-    isMajorChange = (random.random() <= majorMutationChance)
+    isMajorChange = (RANDOM.random() <= majorMutationChance)
 
     if(isMajorChange):
         # Pick a random genes to mutate
