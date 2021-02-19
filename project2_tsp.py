@@ -367,12 +367,27 @@ def run_ga():
     """
     initialize_population()
 
+    lowestFitness = 1000000
+    lowestFitnessGen = -1
+    lowestFitnessPrevGraph = 110000
+    textDisplayRate = int(DISPLAY_RATE / 10)
+    graphDisplayRate = DISPLAY_RATE
+
     for gen in range(GENERATIONS - 1):  # Note, you already ran generation 1
         repopulate(gen + 1)
-        if gen % DISPLAY_RATE == 0:
-            # Print the generation, and the best (lowest) fitness score in the
-            # population for that generation
-            print("Generation Stuff")
+
+        currentFitness = generations[gen][0][1]
+        if(currentFitness < lowestFitness):
+            lowestFitness = currentFitness
+            lowestFitnessGen = gen
+
+        if gen % textDisplayRate == 0:
+            print(
+                f"Generation Stuff: (Gen #: {gen}, Fitness: {currentFitness}, Best: ({lowestFitness}, #{lowestFitnessGen}))")
+
+        if gen % graphDisplayRate == 0 and lowestFitness < lowestFitnessPrevGraph:
+            lowestFitnessPrevGraph = lowestFitness
+            show_route(gen)
 
 
 def show_route(generation_number):
