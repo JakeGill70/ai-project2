@@ -215,6 +215,30 @@ def initialize_population():
     generations.append(my_population)
 
 
+def isValidChromosome(chromosome):
+    # A valid chromosome will be the same length as a chromosome in the first generation.
+    # A valid chromosome will contain no repeated values.
+    lengthOfValidChromosome = len(generations[0][0][0])
+    return (len(chromosome) == lengthOfValidChromosome) and (not checkIfDuplicates(chromosome))
+
+
+def checkIfDuplicates(listOfElems):
+    ''' 
+    Check if given list contains any duplicates.
+    Code written by Varun in his Sept. 2019 article: 
+        "Python : 3 ways to check if there are duplicates in a List"
+
+    https://thispointer.com/python-3-ways-to-check-if-there-are-duplicates-in-a-list/
+    '''
+    setOfElems = set()
+    for elem in listOfElems:
+        if elem in setOfElems:
+            return True
+        else:
+            setOfElems.add(elem)
+    return False
+
+
 def repopulate(gen):
     """
     Creates a new generation by repopulation based on the previous generation.
@@ -301,6 +325,11 @@ def crossover(p1, p2):
     # Copy from the first parent up to the end of the chromosome
     for i in range(crossOverPoint2, chromosomeSize):
         child.append(parentAChromosome[i])
+    # Ensure that the child is composed of a valid chromosome
+    if not isValidChromosome(child):
+        raise RuntimeError(
+            (f"Child chromosome is not valid. COP1={crossOverPoint1} "
+             f"COP2={crossOverPoint2}, length={len(child)}, child={child}"))
 
     return child
 
@@ -333,6 +362,8 @@ def mutate(chromosome, recursiveChance=0.8, majorMutationChance=0.7):
 
     # Determine if this is a major mutation
     isMajorChange = (RANDOM.random() <= majorMutationChance)
+    mutationIndex = 0
+    otherIndex = 0
 
     if(isMajorChange):
         # Pick a random genes to mutate
@@ -348,14 +379,21 @@ def mutate(chromosome, recursiveChance=0.8, majorMutationChance=0.7):
         # Pick a random gene to mutate
         mutationIndex = RANDOM.randrange(len(chromosome))
         # Randomly pick an adjacent gene to switch with
-        adjacentIndex = mutationIndex + (1 if bool(RANDOM.getrandbits(1)) else -1)
+        otherIndex = mutationIndex + (1 if bool(RANDOM.getrandbits(1)) else -1)
         # Make sure the adjacentIndex is legal
-        if adjacentIndex >= len(chromosome):
-            adjacentIndex -= 2
-        if adjacentIndex < 0:
-            adjacentIndex += 2
+        if otherIndex >= len(chromosome):
+            otherIndex -= 2
+        if otherIndex < 0:
+            otherIndex += 2
         # Swap the genes at the random indices inside of the chromosome
-        swap_genes(mutationIndex, adjacentIndex, mutant_child)
+        swap_genes(mutationIndex, otherIndex, mutant_child)
+
+    # Ensure that the mutated chromosome is valid
+    if not isValidChromosome(mutant_child):
+        raise RuntimeError(
+            (f"Mutant chromosome is not valid. isMajorMutation={isMajorChange}, "
+                f"MutationIndex={mutationIndex}, OtherIndex={otherIndex}, "
+                f"recurisveChance={recursiveChance}, mutant={mutant_child}"))
 
     # Check to recurse
     if(RANDOM.random() <= recursiveChance):
