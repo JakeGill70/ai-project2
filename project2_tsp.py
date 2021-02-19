@@ -347,7 +347,7 @@ def mutate(chromosome, recursiveChance=0.5, majorMutationChance=0.5):
         # Randomly pick an adjacent gene to switch with
         adjacentIndex = mutationIndex + (1 if bool(random.getrandbits(1)) else -1)
         # Make sure the adjacentIndex is legal
-        if adjacentIndex > len(chromosome):
+        if adjacentIndex >= len(chromosome):
             adjacentIndex -= 2
         if adjacentIndex < 0:
             adjacentIndex += 2
