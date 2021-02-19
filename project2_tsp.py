@@ -294,12 +294,32 @@ def selection(gen):
 
 def crossover(p1, p2):
     """
-    Strategy: Use two crossover points to insert a central segment 
-      from the 2nd parent into the 1st parent. The 1st crossover 
-      point is guranteed to be in the 1st half of the chromosome, 
-      but the 2nd crossover point is only guranteed to be after the 
-      first. Therefore, the algorithm could theorically only exchange 
-      a single gene, or only genes in the first half of the chromosome.
+    Strategy: Use two crossover points to directly copy a middle segment 
+     from the 2nd parent. The middle segment is guranteed to start in the 
+     upper half of the chromosome, but the end is only guranteed to come
+     after the start. This means the segment from parent B could just be
+     the first couple of genes, or at most the entirity of parent B.
+
+     The surrounding genes, not taken from parent B, will be supplied by
+     parent A. If the child already has the gene from parent B, then that
+     gene will be skipped from parent A. If the child already has a gene
+     in that position, the gene from parent A will be inserted at the next
+     available position.
+
+    ---------------------------------------------------------------------------
+
+    Crossover strategy example:
+    A  =  [0,1,2,3,4,5,6,7]
+    B  =  [5,4,2,1,7,6,0,3]
+    C_0 = [x,x,x,1,7,6,x,x] # Copy a mid section from parent B.
+    C_1 = [0,x,x,1,7,6,x,x] # Get 1st gene from parent A.
+    C_2 = [0,2,x,1,7,6,x,x] # Get 3rd gene from parent A because 2nd gene 
+                            #   already game from parent B.
+    C_3 = [0,2,3,1,7,6,x,x]
+                            # Skip 4th-6th gene (1,7,6) because child already 
+                            #   has genes in those positions.
+    C_4 = [0,2,3,1,7,6,4,x] # Continue copying from parent A as needed.
+    C_5 = [0,2,3,1,7,6,4,5] # This is the final value of child, C.
     """
     child = []
 
@@ -313,18 +333,36 @@ def crossover(p1, p2):
     crossOverPoint1 = RANDOM.randint(0, int(chromosomeSize/2))
     # Choose a 2nd crossover point after the first
     crossOverPoint2 = RANDOM.randint(
-        crossOverPoint1 + 1, chromosomeSize)
+        crossOverPoint1 + 1, chromosomeSize),
 
     # *** Create Child ***
-    # Copy from the first parent up to the first crossover point
-    for i in range(0, crossOverPoint1):
-        child.append(parentAChromosome[i])
-    # Copy from the second parent up to the second crossover point
+    # Make empty chromosome
+    child = [None] * chromosomeSize
+    # Copy genes directly from parent B
     for i in range(crossOverPoint1, crossOverPoint2):
-        child.append(parentBChromosome[i])
-    # Copy from the first parent up to the end of the chromosome
-    for i in range(crossOverPoint2, chromosomeSize):
-        child.append(parentAChromosome[i])
+        child[i] = parentBChromosome[i]
+    # Copy remaining genes from parent A as needed
+    ci = 0  # Child Index
+    ai = 0  # Parent A Index
+    # For every index in the child chromosome
+    while ci < chromosomeSize:
+        # If nothing is assigned in that gene
+        if(child[ci] == None):
+            # And the gene in parent A is not already in the child
+            if(parentAChromosome[ai] not in child):
+                # Copy the gene
+                child[ci] = parentAChromosome[ai]
+                # Advance the child index because a new gene was added
+                ci += 1
+            # Advance parent A's index because
+            #  1) A gene from parent A was added.
+            #  2) The gene from parent A was previously added by parent B.
+            ai += 1
+        # If the child already has a gene at that position from parent B,
+        #  skip over that position without affecting parent A.
+        else:
+            ci += 1
+
     # Ensure that the child is composed of a valid chromosome
     if not isValidChromosome(child):
         raise RuntimeError(
