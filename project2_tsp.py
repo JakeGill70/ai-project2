@@ -10,6 +10,7 @@ import operator
 import math
 import pandas
 import matplotlib.pyplot as plt
+import time
 
 # ========================================
 # Created by: Brian Bennett
@@ -33,6 +34,8 @@ GENERATIONS = 1000
 POPULATION_SIZE = 200
 MUTATION_RATE = 0.1
 DISPLAY_RATE = 100
+RANDOM_SEED = time.time_ns()
+RANDOM = random.Random(RANDOM_SEED)
 
 # -- Set up Origin and Destination Points
 origin_point = (36.3044549, -82.3632187)  # Start at ETSU
@@ -193,7 +196,7 @@ def initialize_population():
         chromosomeSize = len(points)
         newChromosome = [i for i in range(chromosomeSize)]
         # Jumble up the chromosome
-        random.shuffle(newChromosome)
+        RANDOM.shuffle(newChromosome)
         # Calculate the fitness
         # ! Read the ? section below to understand the [1] at the end of the line
         fitness = calculate_fitness(newChromosome)[1]
@@ -230,7 +233,7 @@ def repopulate(gen):
     while len(my_population) < POPULATION_SIZE:
         parentA, parentB = selection(previousPopulation)
         child = crossover(parentA, parentB)
-        if(random.random() <= MUTATION_RATE):
+        if(RANDOM.random() <= MUTATION_RATE):
             child = mutate(child)
         my_population.append(calculate_fitness(child))
 
@@ -251,12 +254,12 @@ def selection(gen):
     #  chromosome could potentially also come from the top 10%.
     firstParentPercentile = 0.1
     secondParentPercentile = 0.7
-    firstParentIndex = random.randrange(0, round(len(gen) * firstParentPercentile))
-    secondParentIndex = random.randrange(0, round(len(gen) * secondParentPercentile))
+    firstParentIndex = RANDOM.randrange(0, round(len(gen) * firstParentPercentile))
+    secondParentIndex = RANDOM.randrange(0, round(len(gen) * secondParentPercentile))
 
     # If the same parent is chosen, pick another
     while firstParentIndex == secondParentIndex:
-        secondParentIndex = random.randrange(0, round(len(gen) * secondParentPercentile))
+        secondParentIndex = RANDOM.randrange(0, round(len(gen) * secondParentPercentile))
 
     # Get the parents using the parent indices
     parent1 = gen[firstParentIndex]
@@ -283,9 +286,9 @@ def crossover(p1, p2):
     chromosomeSize = len(parentAChromosome)
 
     # Choose a crossover point from the first half of the chromosome
-    crossOverPoint1 = random.randint(0, int(chromosomeSize/2))
+    crossOverPoint1 = RANDOM.randint(0, int(chromosomeSize/2))
     # Choose a 2nd crossover point after the first
-    crossOverPoint2 = random.randint(
+    crossOverPoint2 = RANDOM.randint(
         crossOverPoint1 + 1, chromosomeSize)
 
     # *** Create Child ***
@@ -333,19 +336,19 @@ def mutate(chromosome, recursiveChance=0.5, majorMutationChance=0.5):
 
     if(isMajorChange):
         # Pick a random genes to mutate
-        mutationIndex = random.randrange(len(chromosome))
-        otherIndex = random.randrange(len(chromosome))
+        mutationIndex = RANDOM.randrange(len(chromosome))
+        otherIndex = RANDOM.randrange(len(chromosome))
         # Make sure the genes aren't the same
         while mutationIndex == otherIndex:
-            otherIndex = random.randrange(len(chromosome))
+            otherIndex = RANDOM.randrange(len(chromosome))
         # Swap the genes at the random indices inside of the chromosome
         swap_genes(mutationIndex, otherIndex, mutant_child)
 
     else:  # if(isMinorChange)
         # Pick a random gene to mutate
-        mutationIndex = random.randrange(len(chromosome))
+        mutationIndex = RANDOM.randrange(len(chromosome))
         # Randomly pick an adjacent gene to switch with
-        adjacentIndex = mutationIndex + (1 if bool(random.getrandbits(1)) else -1)
+        adjacentIndex = mutationIndex + (1 if bool(RANDOM.getrandbits(1)) else -1)
         # Make sure the adjacentIndex is legal
         if adjacentIndex >= len(chromosome):
             adjacentIndex -= 2
@@ -355,7 +358,7 @@ def mutate(chromosome, recursiveChance=0.5, majorMutationChance=0.5):
         swap_genes(mutationIndex, adjacentIndex, mutant_child)
 
     # Check to recurse
-    if(random.random() <= recursiveChance):
+    if(RANDOM.random() <= recursiveChance):
         mutant_child = mutate(mutant_child, recursiveChance/2)
 
     return mutant_child
@@ -432,6 +435,9 @@ def main():
                 points.append(point_node)
 
     print("There were", len(points), "unique points found.")
+
+    print(f"Random seed is: {RANDOM_SEED}")
+    print(f"First 3 values are: {RANDOM.randrange(0,10)}, {RANDOM.randrange(0,10)}, {RANDOM.randrange(0,10)}")
 
     run_ga()
     # show_route(0)
