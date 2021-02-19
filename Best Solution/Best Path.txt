@@ -1,0 +1,1075 @@
+
+(ox) C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2>python project2_tsp.py
+2021-02-19 05:42:06 Configured OSMnx 1.0.1
+2021-02-19 05:42:06 HTTP response caching is on
+2021-02-19 05:42:06 Retrieved response from cache file "cache\ec5340eb372a7efb2038ee9edc402b4263c2c6dc.json"
+2021-02-19 05:42:06 Geocoded "1276 Gilbreath Drive, Johnson City, Washington County, Tennessee, 37614, United States" to (36.3022214, -82.36945750910178)
+2021-02-19 05:42:06 Created bbox 8000 m from (36.3022214, -82.36945750910178): 36.37416702683943,36.23027577316057,-82.28018445895087,-82.45873055925269
+2021-02-19 05:42:06 Projected GeoDataFrame to +proj=utm +zone=17 +ellps=WGS84 +datum=WGS84 +units=m +no_defs +type=crs
+2021-02-19 05:42:06 Projected GeoDataFrame to epsg:4326
+2021-02-19 05:42:06 Projected GeoDataFrame to +proj=utm +zone=17 +ellps=WGS84 +datum=WGS84 +units=m +no_defs +type=crs
+2021-02-19 05:42:06 Projected GeoDataFrame to epsg:4326
+2021-02-19 05:42:06 Requesting data within polygon from API in 1 request(s)
+2021-02-19 05:42:06 Retrieved response from cache file "cache\cf1001bbae7045b5dc11e71142e6343c55ea4234.json"
+2021-02-19 05:42:06 Got all network data within polygon from API in 1 request(s)
+2021-02-19 05:42:06 Creating graph from downloaded OSM data...
+2021-02-19 05:42:07 Created graph with 28281 nodes and 55440 edges
+2021-02-19 05:42:07 Added edge lengths to graph
+2021-02-19 05:42:07 Identifying all nodes that lie outside the polygon...
+2021-02-19 05:42:09 Created nodes GeoDataFrame from graph
+2021-02-19 05:42:10 Created r-tree spatial index for 28281 geometries
+2021-02-19 05:42:10 Identified 26778 geometries inside polygon
+2021-02-19 05:42:11 Removed 1503 nodes outside polygon
+2021-02-19 05:42:11 Truncated graph by polygon
+2021-02-19 05:42:11 Begin topologically simplifying the graph...
+2021-02-19 05:42:12 Identified 4984 edge endpoints
+2021-02-19 05:42:14 Simplified graph: 26778 to 4984 nodes, 52467 to 11993 edges
+2021-02-19 05:42:14 Identifying all nodes that lie outside the polygon...
+2021-02-19 05:42:14 Created nodes GeoDataFrame from graph
+2021-02-19 05:42:15 Created r-tree spatial index for 4984 geometries
+2021-02-19 05:42:15 Identified 4584 geometries inside polygon
+2021-02-19 05:42:16 Removed 400 nodes outside polygon
+2021-02-19 05:42:16 Removed 6 isolated nodes
+2021-02-19 05:42:16 Got largest weakly connected component (4514 of 4578 total nodes)
+2021-02-19 05:42:16 Truncated graph by polygon
+2021-02-19 05:42:16 Counted undirected street segments incident to each node
+2021-02-19 05:42:16 graph_from_polygon returned graph with 4514 nodes and 11041 edges
+2021-02-19 05:42:16 graph_from_bbox returned graph with 4514 nodes and 11041 edges
+2021-02-19 05:42:16 graph_from_point returned graph with 4514 nodes and 11041 edges
+2021-02-19 05:42:16 graph_from_address returned graph with 4514 nodes and 11041 edges
+2021-02-19 05:42:16 Found nearest node (1721006282) to point (36.3044549, -82.3632187)
+2021-02-19 05:42:16 Found nearest node (1721006282) to point (36.3044549, -82.3632187)
+2021-02-19 05:42:16 Found nearest node (2405288504) to point (36.33852499, -82.40324691)
+2021-02-19 05:42:16 Found nearest node (204021995) to point (36.418737, -82.470076)
+2021-02-19 05:42:17 Found nearest node (3639524034) to point (36.31345969, -82.38399434)
+2021-02-19 05:42:17 Found nearest node (204024349) to point (36.310934, -82.433682)
+2021-02-19 05:42:17 Found nearest node (2002564198) to point (36.34799053, -82.40588729)
+2021-02-19 05:42:17 Found nearest node (2002564198) to point (36.34799988, -82.4058357)
+2021-02-19 05:42:17 Found nearest node (204001172) to point (36.32687143, -82.39349586)
+2021-02-19 05:42:17 Found nearest node (2402075819) to point (36.3049161, -82.3874892)
+2021-02-19 05:42:17 Found nearest node (204021995) to point (36.4145034, -82.46873333)
+2021-02-19 05:42:17 Found nearest node (203975701) to point (36.32113902, -82.35648265)
+2021-02-19 05:42:17 Found nearest node (203975735) to point (36.326309, -82.351398)
+2021-02-19 05:42:17 Found nearest node (2402075921) to point (36.30524864, -82.3845971)
+2021-02-19 05:42:17 Found nearest node (204041311) to point (36.329174, -82.391683)
+2021-02-19 05:42:17 Found nearest node (204019752) to point (36.34958, -82.37264)
+2021-02-19 05:42:17 Found nearest node (2405426450) to point (36.36190274, -82.40080228)
+2021-02-19 05:42:17 Found nearest node (204025819) to point (36.37372032, -82.42759672)
+2021-02-19 05:42:17 Found nearest node (2405288420) to point (36.33788879, -82.39939419)
+2021-02-19 05:42:17 Found nearest node (204013059) to point (36.35521525, -82.37348719)
+2021-02-19 05:42:17 Found nearest node (2402075819) to point (36.3049161, -82.3874892)
+2021-02-19 05:42:17 Found nearest node (2405534826) to point (36.35003818, -82.37211291)
+2021-02-19 05:42:17 Found nearest node (2405288504) to point (36.33854073, -82.40328037)
+2021-02-19 05:42:17 Found nearest node (203980428) to point (36.351669, -82.370903)
+2021-02-19 05:42:17 Found nearest node (2030099438) to point (36.31587997, -82.39096867)
+2021-02-19 05:42:17 Found nearest node (203989183) to point (36.30689139, -82.36515662)
+2021-02-19 05:42:17 Found nearest node (203965210) to point (36.30910511, -82.39841053)
+2021-02-19 05:42:17 Found nearest node (2405276713) to point (36.34067819, -82.39840076)
+2021-02-19 05:42:17 Found nearest node (2405276713) to point (36.34073133, -82.3983999)
+2021-02-19 05:42:17 Found nearest node (203996723) to point (36.36497043, -82.38123284)
+2021-02-19 05:42:17 Found nearest node (204025819) to point (36.3790394, -82.4256193)
+2021-02-19 05:42:17 Found nearest node (6612143729) to point (36.31652865, -82.35195127)
+2021-02-19 05:42:17 Found nearest node (204015969) to point (36.32034629, -82.35488939)
+2021-02-19 05:42:17 Found nearest node (203974717) to point (36.319957, -82.357684)
+2021-02-19 05:42:17 Found nearest node (203978466) to point (36.318791, -82.347113)
+2021-02-19 05:42:17 Found nearest node (204000165) to point (36.31658165, -82.37235352)
+2021-02-19 05:42:17 Found nearest node (1271620020) to point (36.3016612, -82.3378302)
+2021-02-19 05:42:17 Found nearest node (1247210027) to point (36.30837207, -82.38576411)
+2021-02-19 05:42:17 Found nearest node (204019752) to point (36.34997658, -82.3736047)
+2021-02-19 05:42:17 Found nearest node (203959303) to point (36.35330624, -82.37561378)
+2021-02-19 05:42:17 Found nearest node (203959303) to point (36.3539211, -82.3753026)
+2021-02-19 05:42:17 Found nearest node (2405404965) to point (36.34272181, -82.39928527)
+There were 32 unique points found.
+Traceback (most recent call last):
+  File "C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2\project2_tsp.py", line 450, in <module>
+    main()
+  File "C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2\project2_tsp.py", line 439, in main
+    print("Random seed is: " + randomSeed)
+TypeError: can only concatenate str (not "float") to str
+
+(ox) C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2>python project2_tsp.py
+2021-02-19 05:42:52 Configured OSMnx 1.0.1
+2021-02-19 05:42:52 HTTP response caching is on
+2021-02-19 05:42:52 Retrieved response from cache file "cache\ec5340eb372a7efb2038ee9edc402b4263c2c6dc.json"
+2021-02-19 05:42:52 Geocoded "1276 Gilbreath Drive, Johnson City, Washington County, Tennessee, 37614, United States" to (36.3022214, -82.36945750910178)
+2021-02-19 05:42:52 Created bbox 8000 m from (36.3022214, -82.36945750910178): 36.37416702683943,36.23027577316057,-82.28018445895087,-82.45873055925269
+2021-02-19 05:42:52 Projected GeoDataFrame to +proj=utm +zone=17 +ellps=WGS84 +datum=WGS84 +units=m +no_defs +type=crs
+2021-02-19 05:42:52 Projected GeoDataFrame to epsg:4326
+2021-02-19 05:42:52 Projected GeoDataFrame to +proj=utm +zone=17 +ellps=WGS84 +datum=WGS84 +units=m +no_defs +type=crs
+2021-02-19 05:42:52 Projected GeoDataFrame to epsg:4326
+2021-02-19 05:42:52 Requesting data within polygon from API in 1 request(s)
+2021-02-19 05:42:52 Retrieved response from cache file "cache\cf1001bbae7045b5dc11e71142e6343c55ea4234.json"
+2021-02-19 05:42:52 Got all network data within polygon from API in 1 request(s)
+2021-02-19 05:42:52 Creating graph from downloaded OSM data...
+2021-02-19 05:42:53 Created graph with 28281 nodes and 55440 edges
+2021-02-19 05:42:54 Added edge lengths to graph
+2021-02-19 05:42:54 Identifying all nodes that lie outside the polygon...
+2021-02-19 05:42:55 Created nodes GeoDataFrame from graph
+2021-02-19 05:42:57 Created r-tree spatial index for 28281 geometries
+2021-02-19 05:42:57 Identified 26778 geometries inside polygon
+2021-02-19 05:42:58 Removed 1503 nodes outside polygon
+2021-02-19 05:42:58 Truncated graph by polygon
+2021-02-19 05:42:58 Begin topologically simplifying the graph...
+2021-02-19 05:42:59 Identified 4984 edge endpoints
+2021-02-19 05:43:02 Simplified graph: 26778 to 4984 nodes, 52467 to 11993 edges
+2021-02-19 05:43:02 Identifying all nodes that lie outside the polygon...
+2021-02-19 05:43:02 Created nodes GeoDataFrame from graph
+2021-02-19 05:43:03 Created r-tree spatial index for 4984 geometries
+2021-02-19 05:43:03 Identified 4584 geometries inside polygon
+2021-02-19 05:43:03 Removed 400 nodes outside polygon
+2021-02-19 05:43:03 Removed 6 isolated nodes
+2021-02-19 05:43:03 Got largest weakly connected component (4514 of 4578 total nodes)
+2021-02-19 05:43:03 Truncated graph by polygon
+2021-02-19 05:43:04 Counted undirected street segments incident to each node
+2021-02-19 05:43:04 graph_from_polygon returned graph with 4514 nodes and 11041 edges
+2021-02-19 05:43:04 graph_from_bbox returned graph with 4514 nodes and 11041 edges
+2021-02-19 05:43:04 graph_from_point returned graph with 4514 nodes and 11041 edges
+2021-02-19 05:43:04 graph_from_address returned graph with 4514 nodes and 11041 edges
+2021-02-19 05:43:04 Found nearest node (1721006282) to point (36.3044549, -82.3632187)
+2021-02-19 05:43:04 Found nearest node (1721006282) to point (36.3044549, -82.3632187)
+2021-02-19 05:43:04 Found nearest node (2405288504) to point (36.33852499, -82.40324691)
+2021-02-19 05:43:04 Found nearest node (204021995) to point (36.418737, -82.470076)
+2021-02-19 05:43:04 Found nearest node (3639524034) to point (36.31345969, -82.38399434)
+2021-02-19 05:43:04 Found nearest node (204024349) to point (36.310934, -82.433682)
+2021-02-19 05:43:04 Found nearest node (2002564198) to point (36.34799053, -82.40588729)
+2021-02-19 05:43:04 Found nearest node (2002564198) to point (36.34799988, -82.4058357)
+2021-02-19 05:43:04 Found nearest node (204001172) to point (36.32687143, -82.39349586)
+2021-02-19 05:43:04 Found nearest node (2402075819) to point (36.3049161, -82.3874892)
+2021-02-19 05:43:04 Found nearest node (204021995) to point (36.4145034, -82.46873333)
+2021-02-19 05:43:04 Found nearest node (203975701) to point (36.32113902, -82.35648265)
+2021-02-19 05:43:04 Found nearest node (203975735) to point (36.326309, -82.351398)
+2021-02-19 05:43:04 Found nearest node (2402075921) to point (36.30524864, -82.3845971)
+2021-02-19 05:43:04 Found nearest node (204041311) to point (36.329174, -82.391683)
+2021-02-19 05:43:04 Found nearest node (204019752) to point (36.34958, -82.37264)
+2021-02-19 05:43:04 Found nearest node (2405426450) to point (36.36190274, -82.40080228)
+2021-02-19 05:43:04 Found nearest node (204025819) to point (36.37372032, -82.42759672)
+2021-02-19 05:43:04 Found nearest node (2405288420) to point (36.33788879, -82.39939419)
+2021-02-19 05:43:04 Found nearest node (204013059) to point (36.35521525, -82.37348719)
+2021-02-19 05:43:04 Found nearest node (2402075819) to point (36.3049161, -82.3874892)
+2021-02-19 05:43:04 Found nearest node (2405534826) to point (36.35003818, -82.37211291)
+2021-02-19 05:43:04 Found nearest node (2405288504) to point (36.33854073, -82.40328037)
+2021-02-19 05:43:04 Found nearest node (203980428) to point (36.351669, -82.370903)
+2021-02-19 05:43:04 Found nearest node (2030099438) to point (36.31587997, -82.39096867)
+2021-02-19 05:43:04 Found nearest node (203989183) to point (36.30689139, -82.36515662)
+2021-02-19 05:43:04 Found nearest node (203965210) to point (36.30910511, -82.39841053)
+2021-02-19 05:43:04 Found nearest node (2405276713) to point (36.34067819, -82.39840076)
+2021-02-19 05:43:04 Found nearest node (2405276713) to point (36.34073133, -82.3983999)
+2021-02-19 05:43:04 Found nearest node (203996723) to point (36.36497043, -82.38123284)
+2021-02-19 05:43:04 Found nearest node (204025819) to point (36.3790394, -82.4256193)
+2021-02-19 05:43:04 Found nearest node (6612143729) to point (36.31652865, -82.35195127)
+2021-02-19 05:43:04 Found nearest node (204015969) to point (36.32034629, -82.35488939)
+2021-02-19 05:43:04 Found nearest node (203974717) to point (36.319957, -82.357684)
+2021-02-19 05:43:04 Found nearest node (203978466) to point (36.318791, -82.347113)
+2021-02-19 05:43:04 Found nearest node (204000165) to point (36.31658165, -82.37235352)
+2021-02-19 05:43:04 Found nearest node (1271620020) to point (36.3016612, -82.3378302)
+2021-02-19 05:43:04 Found nearest node (1247210027) to point (36.30837207, -82.38576411)
+2021-02-19 05:43:04 Found nearest node (204019752) to point (36.34997658, -82.3736047)
+2021-02-19 05:43:04 Found nearest node (203959303) to point (36.35330624, -82.37561378)
+2021-02-19 05:43:04 Found nearest node (203959303) to point (36.3539211, -82.3753026)
+2021-02-19 05:43:04 Found nearest node (2405404965) to point (36.34272181, -82.39928527)
+There were 32 unique points found.
+Random seed is: 1613731384.0877597
+First 3 values are: 2, 6, 5
+Generation Stuff: (Gen #: 0, Fitness: 69.96697122656477, Best: (69.96697122656477, #0))
+Generation Stuff: (Gen #: 10, Fitness: 30.19107549910539, Best: (30.19107549910539, #10))
+Generation Stuff: (Gen #: 20, Fitness: 18.711268378453813, Best: (18.711268378453813, #20))
+Generation Stuff: (Gen #: 30, Fitness: 17.030471240959958, Best: (17.030471240959958, #30))
+Generation Stuff: (Gen #: 40, Fitness: 16.61708842225734, Best: (16.61708842225734, #34))
+Traceback (most recent call last):
+  File "C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2\project2_tsp.py", line 450, in <module>
+    main()
+  File "C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2\project2_tsp.py", line 442, in main
+    run_ga()
+  File "C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2\project2_tsp.py", line 380, in run_ga
+    repopulate(gen + 1)
+  File "C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2\project2_tsp.py", line 238, in repopulate
+    my_population.append(calculate_fitness(child))
+  File "C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2\project2_tsp.py", line 174, in calculate_fitness
+    fitness += get_distance(nodeA_id, nodeB_id)
+  File "C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2\project2_tsp.py", line 154, in get_distance
+    return haversine(nodeA_id, nodeB_id)
+  File "C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2\project2_tsp.py", line 143, in haversine
+    G.nodes[point1]['y'],
+KeyboardInterrupt
+^C
+(ox) C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2>python project2_tsp.py
+2021-02-19 05:43:46 Configured OSMnx 1.0.1
+2021-02-19 05:43:46 HTTP response caching is on
+2021-02-19 05:43:46 Retrieved response from cache file "cache\ec5340eb372a7efb2038ee9edc402b4263c2c6dc.json"
+2021-02-19 05:43:46 Geocoded "1276 Gilbreath Drive, Johnson City, Washington County, Tennessee, 37614, United States" to (36.3022214, -82.36945750910178)
+2021-02-19 05:43:46 Created bbox 8000 m from (36.3022214, -82.36945750910178): 36.37416702683943,36.23027577316057,-82.28018445895087,-82.45873055925269
+2021-02-19 05:43:46 Projected GeoDataFrame to +proj=utm +zone=17 +ellps=WGS84 +datum=WGS84 +units=m +no_defs +type=crs
+2021-02-19 05:43:46 Projected GeoDataFrame to epsg:4326
+2021-02-19 05:43:46 Projected GeoDataFrame to +proj=utm +zone=17 +ellps=WGS84 +datum=WGS84 +units=m +no_defs +type=crs
+2021-02-19 05:43:46 Projected GeoDataFrame to epsg:4326
+2021-02-19 05:43:46 Requesting data within polygon from API in 1 request(s)
+2021-02-19 05:43:46 Retrieved response from cache file "cache\cf1001bbae7045b5dc11e71142e6343c55ea4234.json"
+2021-02-19 05:43:46 Got all network data within polygon from API in 1 request(s)
+2021-02-19 05:43:46 Creating graph from downloaded OSM data...
+2021-02-19 05:43:47 Created graph with 28281 nodes and 55440 edges
+2021-02-19 05:43:48 Added edge lengths to graph
+2021-02-19 05:43:48 Identifying all nodes that lie outside the polygon...
+2021-02-19 05:43:49 Created nodes GeoDataFrame from graph
+2021-02-19 05:43:50 Created r-tree spatial index for 28281 geometries
+2021-02-19 05:43:51 Identified 26778 geometries inside polygon
+2021-02-19 05:43:52 Removed 1503 nodes outside polygon
+2021-02-19 05:43:52 Truncated graph by polygon
+2021-02-19 05:43:52 Begin topologically simplifying the graph...
+2021-02-19 05:43:53 Identified 4984 edge endpoints
+2021-02-19 05:43:55 Simplified graph: 26778 to 4984 nodes, 52467 to 11993 edges
+2021-02-19 05:43:55 Identifying all nodes that lie outside the polygon...
+2021-02-19 05:43:55 Created nodes GeoDataFrame from graph
+2021-02-19 05:43:56 Created r-tree spatial index for 4984 geometries
+2021-02-19 05:43:56 Identified 4584 geometries inside polygon
+2021-02-19 05:43:56 Removed 400 nodes outside polygon
+2021-02-19 05:43:56 Removed 6 isolated nodes
+2021-02-19 05:43:56 Got largest weakly connected component (4514 of 4578 total nodes)
+2021-02-19 05:43:56 Truncated graph by polygon
+2021-02-19 05:43:56 Counted undirected street segments incident to each node
+2021-02-19 05:43:56 graph_from_polygon returned graph with 4514 nodes and 11041 edges
+2021-02-19 05:43:56 graph_from_bbox returned graph with 4514 nodes and 11041 edges
+2021-02-19 05:43:56 graph_from_point returned graph with 4514 nodes and 11041 edges
+2021-02-19 05:43:56 graph_from_address returned graph with 4514 nodes and 11041 edges
+2021-02-19 05:43:56 Found nearest node (1721006282) to point (36.3044549, -82.3632187)
+2021-02-19 05:43:56 Found nearest node (1721006282) to point (36.3044549, -82.3632187)
+2021-02-19 05:43:56 Found nearest node (2405288504) to point (36.33852499, -82.40324691)
+2021-02-19 05:43:56 Found nearest node (204021995) to point (36.418737, -82.470076)
+2021-02-19 05:43:56 Found nearest node (3639524034) to point (36.31345969, -82.38399434)
+2021-02-19 05:43:56 Found nearest node (204024349) to point (36.310934, -82.433682)
+2021-02-19 05:43:56 Found nearest node (2002564198) to point (36.34799053, -82.40588729)
+2021-02-19 05:43:57 Found nearest node (2002564198) to point (36.34799988, -82.4058357)
+2021-02-19 05:43:57 Found nearest node (204001172) to point (36.32687143, -82.39349586)
+2021-02-19 05:43:57 Found nearest node (2402075819) to point (36.3049161, -82.3874892)
+2021-02-19 05:43:57 Found nearest node (204021995) to point (36.4145034, -82.46873333)
+2021-02-19 05:43:57 Found nearest node (203975701) to point (36.32113902, -82.35648265)
+2021-02-19 05:43:57 Found nearest node (203975735) to point (36.326309, -82.351398)
+2021-02-19 05:43:57 Found nearest node (2402075921) to point (36.30524864, -82.3845971)
+2021-02-19 05:43:57 Found nearest node (204041311) to point (36.329174, -82.391683)
+2021-02-19 05:43:57 Found nearest node (204019752) to point (36.34958, -82.37264)
+2021-02-19 05:43:57 Found nearest node (2405426450) to point (36.36190274, -82.40080228)
+2021-02-19 05:43:57 Found nearest node (204025819) to point (36.37372032, -82.42759672)
+2021-02-19 05:43:57 Found nearest node (2405288420) to point (36.33788879, -82.39939419)
+2021-02-19 05:43:57 Found nearest node (204013059) to point (36.35521525, -82.37348719)
+2021-02-19 05:43:57 Found nearest node (2402075819) to point (36.3049161, -82.3874892)
+2021-02-19 05:43:57 Found nearest node (2405534826) to point (36.35003818, -82.37211291)
+2021-02-19 05:43:57 Found nearest node (2405288504) to point (36.33854073, -82.40328037)
+2021-02-19 05:43:57 Found nearest node (203980428) to point (36.351669, -82.370903)
+2021-02-19 05:43:57 Found nearest node (2030099438) to point (36.31587997, -82.39096867)
+2021-02-19 05:43:57 Found nearest node (203989183) to point (36.30689139, -82.36515662)
+2021-02-19 05:43:57 Found nearest node (203965210) to point (36.30910511, -82.39841053)
+2021-02-19 05:43:57 Found nearest node (2405276713) to point (36.34067819, -82.39840076)
+2021-02-19 05:43:57 Found nearest node (2405276713) to point (36.34073133, -82.3983999)
+2021-02-19 05:43:57 Found nearest node (203996723) to point (36.36497043, -82.38123284)
+2021-02-19 05:43:57 Found nearest node (204025819) to point (36.3790394, -82.4256193)
+2021-02-19 05:43:57 Found nearest node (6612143729) to point (36.31652865, -82.35195127)
+2021-02-19 05:43:57 Found nearest node (204015969) to point (36.32034629, -82.35488939)
+2021-02-19 05:43:57 Found nearest node (203974717) to point (36.319957, -82.357684)
+2021-02-19 05:43:57 Found nearest node (203978466) to point (36.318791, -82.347113)
+2021-02-19 05:43:57 Found nearest node (204000165) to point (36.31658165, -82.37235352)
+2021-02-19 05:43:57 Found nearest node (1271620020) to point (36.3016612, -82.3378302)
+2021-02-19 05:43:57 Found nearest node (1247210027) to point (36.30837207, -82.38576411)
+2021-02-19 05:43:57 Found nearest node (204019752) to point (36.34997658, -82.3736047)
+2021-02-19 05:43:57 Found nearest node (203959303) to point (36.35330624, -82.37561378)
+2021-02-19 05:43:57 Found nearest node (203959303) to point (36.3539211, -82.3753026)
+2021-02-19 05:43:57 Found nearest node (2405404965) to point (36.34272181, -82.39928527)
+There were 32 unique points found.
+Random seed is: 1613731384.0877597
+First 3 values are: 2, 6, 5
+Generation Stuff: (Gen #: 0, Fitness: 69.96697122656477, Best: (69.96697122656477, #0))
+Generation Stuff: (Gen #: 10, Fitness: 30.82140729882815, Best: (30.82140729882815, #10))
+Traceback (most recent call last):
+  File "C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2\project2_tsp.py", line 450, in <module>
+    main()
+  File "C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2\project2_tsp.py", line 442, in main
+    run_ga()
+  File "C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2\project2_tsp.py", line 380, in run_ga
+    repopulate(gen + 1)
+  File "C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2\project2_tsp.py", line 237, in repopulate
+    child = mutate(child)
+  File "C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2\project2_tsp.py", line 332, in mutate
+    mutant_child = [x for x in chromosome]
+  File "C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2\project2_tsp.py", line 332, in <listcomp>
+    mutant_child = [x for x in chromosome]
+KeyboardInterrupt
+^C
+(ox) C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2>python project2_tsp.py
+2021-02-19 05:47:00 Configured OSMnx 1.0.1
+2021-02-19 05:47:00 HTTP response caching is on
+2021-02-19 05:47:00 Retrieved response from cache file "cache\ec5340eb372a7efb2038ee9edc402b4263c2c6dc.json"
+2021-02-19 05:47:00 Geocoded "1276 Gilbreath Drive, Johnson City, Washington County, Tennessee, 37614, United States" to (36.3022214, -82.36945750910178)
+2021-02-19 05:47:00 Created bbox 8000 m from (36.3022214, -82.36945750910178): 36.37416702683943,36.23027577316057,-82.28018445895087,-82.45873055925269
+2021-02-19 05:47:01 Projected GeoDataFrame to +proj=utm +zone=17 +ellps=WGS84 +datum=WGS84 +units=m +no_defs +type=crs
+2021-02-19 05:47:01 Projected GeoDataFrame to epsg:4326
+2021-02-19 05:47:01 Projected GeoDataFrame to +proj=utm +zone=17 +ellps=WGS84 +datum=WGS84 +units=m +no_defs +type=crs
+2021-02-19 05:47:01 Projected GeoDataFrame to epsg:4326
+2021-02-19 05:47:01 Requesting data within polygon from API in 1 request(s)
+2021-02-19 05:47:01 Retrieved response from cache file "cache\cf1001bbae7045b5dc11e71142e6343c55ea4234.json"
+2021-02-19 05:47:01 Got all network data within polygon from API in 1 request(s)
+2021-02-19 05:47:01 Creating graph from downloaded OSM data...
+2021-02-19 05:47:02 Created graph with 28281 nodes and 55440 edges
+2021-02-19 05:47:03 Added edge lengths to graph
+2021-02-19 05:47:03 Identifying all nodes that lie outside the polygon...
+2021-02-19 05:47:05 Created nodes GeoDataFrame from graph
+2021-02-19 05:47:07 Created r-tree spatial index for 28281 geometries
+2021-02-19 05:47:08 Identified 26778 geometries inside polygon
+2021-02-19 05:47:09 Removed 1503 nodes outside polygon
+2021-02-19 05:47:09 Truncated graph by polygon
+2021-02-19 05:47:09 Begin topologically simplifying the graph...
+2021-02-19 05:47:11 Identified 4984 edge endpoints
+2021-02-19 05:47:14 Simplified graph: 26778 to 4984 nodes, 52467 to 11993 edges
+2021-02-19 05:47:15 Identifying all nodes that lie outside the polygon...
+2021-02-19 05:47:15 Created nodes GeoDataFrame from graph
+2021-02-19 05:47:15 Created r-tree spatial index for 4984 geometries
+2021-02-19 05:47:15 Identified 4584 geometries inside polygon
+2021-02-19 05:47:16 Removed 400 nodes outside polygon
+2021-02-19 05:47:16 Removed 6 isolated nodes
+2021-02-19 05:47:16 Got largest weakly connected component (4514 of 4578 total nodes)
+2021-02-19 05:47:16 Truncated graph by polygon
+2021-02-19 05:47:16 Counted undirected street segments incident to each node
+2021-02-19 05:47:16 graph_from_polygon returned graph with 4514 nodes and 11041 edges
+2021-02-19 05:47:16 graph_from_bbox returned graph with 4514 nodes and 11041 edges
+2021-02-19 05:47:16 graph_from_point returned graph with 4514 nodes and 11041 edges
+2021-02-19 05:47:16 graph_from_address returned graph with 4514 nodes and 11041 edges
+2021-02-19 05:47:16 Found nearest node (1721006282) to point (36.3044549, -82.3632187)
+2021-02-19 05:47:16 Found nearest node (1721006282) to point (36.3044549, -82.3632187)
+2021-02-19 05:47:16 Found nearest node (2405288504) to point (36.33852499, -82.40324691)
+2021-02-19 05:47:16 Found nearest node (204021995) to point (36.418737, -82.470076)
+2021-02-19 05:47:17 Found nearest node (3639524034) to point (36.31345969, -82.38399434)
+2021-02-19 05:47:17 Found nearest node (204024349) to point (36.310934, -82.433682)
+2021-02-19 05:47:17 Found nearest node (2002564198) to point (36.34799053, -82.40588729)
+2021-02-19 05:47:17 Found nearest node (2002564198) to point (36.34799988, -82.4058357)
+2021-02-19 05:47:17 Found nearest node (204001172) to point (36.32687143, -82.39349586)
+2021-02-19 05:47:17 Found nearest node (2402075819) to point (36.3049161, -82.3874892)
+2021-02-19 05:47:17 Found nearest node (204021995) to point (36.4145034, -82.46873333)
+2021-02-19 05:47:17 Found nearest node (203975701) to point (36.32113902, -82.35648265)
+2021-02-19 05:47:17 Found nearest node (203975735) to point (36.326309, -82.351398)
+2021-02-19 05:47:17 Found nearest node (2402075921) to point (36.30524864, -82.3845971)
+2021-02-19 05:47:17 Found nearest node (204041311) to point (36.329174, -82.391683)
+2021-02-19 05:47:17 Found nearest node (204019752) to point (36.34958, -82.37264)
+2021-02-19 05:47:17 Found nearest node (2405426450) to point (36.36190274, -82.40080228)
+2021-02-19 05:47:17 Found nearest node (204025819) to point (36.37372032, -82.42759672)
+2021-02-19 05:47:17 Found nearest node (2405288420) to point (36.33788879, -82.39939419)
+2021-02-19 05:47:17 Found nearest node (204013059) to point (36.35521525, -82.37348719)
+2021-02-19 05:47:17 Found nearest node (2402075819) to point (36.3049161, -82.3874892)
+2021-02-19 05:47:17 Found nearest node (2405534826) to point (36.35003818, -82.37211291)
+2021-02-19 05:47:17 Found nearest node (2405288504) to point (36.33854073, -82.40328037)
+2021-02-19 05:47:17 Found nearest node (203980428) to point (36.351669, -82.370903)
+2021-02-19 05:47:17 Found nearest node (2030099438) to point (36.31587997, -82.39096867)
+2021-02-19 05:47:17 Found nearest node (203989183) to point (36.30689139, -82.36515662)
+2021-02-19 05:47:17 Found nearest node (203965210) to point (36.30910511, -82.39841053)
+2021-02-19 05:47:17 Found nearest node (2405276713) to point (36.34067819, -82.39840076)
+2021-02-19 05:47:17 Found nearest node (2405276713) to point (36.34073133, -82.3983999)
+2021-02-19 05:47:17 Found nearest node (203996723) to point (36.36497043, -82.38123284)
+2021-02-19 05:47:17 Found nearest node (204025819) to point (36.3790394, -82.4256193)
+2021-02-19 05:47:17 Found nearest node (6612143729) to point (36.31652865, -82.35195127)
+2021-02-19 05:47:17 Found nearest node (204015969) to point (36.32034629, -82.35488939)
+2021-02-19 05:47:17 Found nearest node (203974717) to point (36.319957, -82.357684)
+2021-02-19 05:47:17 Found nearest node (203978466) to point (36.318791, -82.347113)
+2021-02-19 05:47:17 Found nearest node (204000165) to point (36.31658165, -82.37235352)
+2021-02-19 05:47:17 Found nearest node (1271620020) to point (36.3016612, -82.3378302)
+2021-02-19 05:47:17 Found nearest node (1247210027) to point (36.30837207, -82.38576411)
+2021-02-19 05:47:17 Found nearest node (204019752) to point (36.34997658, -82.3736047)
+2021-02-19 05:47:17 Found nearest node (203959303) to point (36.35330624, -82.37561378)
+2021-02-19 05:47:17 Found nearest node (203959303) to point (36.3539211, -82.3753026)
+2021-02-19 05:47:17 Found nearest node (2405404965) to point (36.34272181, -82.39928527)
+There were 32 unique points found.
+Random seed is: 1613731636913230600
+First 3 values are: 9, 2, 6
+Generation Stuff: (Gen #: 0, Fitness: 65.01673980286606, Best: (65.01673980286606, #0))
+Generation Stuff: (Gen #: 10, Fitness: 26.615187664324836, Best: (26.615187664324836, #10))
+Generation Stuff: (Gen #: 20, Fitness: 17.819026367815464, Best: (17.819026367815464, #20))
+Generation Stuff: (Gen #: 30, Fitness: 13.648240286134701, Best: (13.648240286134701, #30))
+Generation Stuff: (Gen #: 40, Fitness: 13.299471250842105, Best: (13.299471250842105, #31))
+Generation Stuff: (Gen #: 50, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 60, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 70, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 80, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 90, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 100, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 110, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 120, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 130, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 140, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 150, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 160, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 170, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 180, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 190, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 200, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 210, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 220, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 230, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 240, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 250, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 260, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 270, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 280, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 290, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 300, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 310, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 320, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 330, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 340, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 350, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 360, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 370, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 380, Fitness: 13.078805405604479, Best: (13.078805405604479, #47))
+Generation Stuff: (Gen #: 390, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 400, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 410, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 420, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 430, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 440, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 450, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 460, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 470, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 480, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 490, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 500, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 510, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 520, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 530, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 540, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 550, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 560, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 570, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 580, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 590, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 600, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 610, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 620, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 630, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 640, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 650, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 660, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 670, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 680, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 690, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 700, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 710, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 720, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 730, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 740, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 750, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 760, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 770, Fitness: 13.059449824365743, Best: (13.059449824365743, #388))
+Generation Stuff: (Gen #: 780, Fitness: 13.01621804918917, Best: (13.01621804918917, #778))
+Generation Stuff: (Gen #: 790, Fitness: 13.01621804918917, Best: (13.01621804918917, #778))
+Generation Stuff: (Gen #: 800, Fitness: 13.01621804918917, Best: (13.01621804918917, #778))
+Generation Stuff: (Gen #: 810, Fitness: 13.01621804918917, Best: (13.01621804918917, #778))
+Generation Stuff: (Gen #: 820, Fitness: 13.01621804918917, Best: (13.01621804918917, #778))
+Generation Stuff: (Gen #: 830, Fitness: 13.01621804918917, Best: (13.01621804918917, #778))
+Generation Stuff: (Gen #: 840, Fitness: 13.01621804918917, Best: (13.01621804918917, #778))
+Generation Stuff: (Gen #: 850, Fitness: 13.01621804918917, Best: (13.01621804918917, #778))
+Generation Stuff: (Gen #: 860, Fitness: 13.01621804918917, Best: (13.01621804918917, #778))
+Generation Stuff: (Gen #: 870, Fitness: 13.01621804918917, Best: (13.01621804918917, #778))
+Generation Stuff: (Gen #: 880, Fitness: 13.01621804918917, Best: (13.01621804918917, #778))
+Generation Stuff: (Gen #: 890, Fitness: 13.01621804918917, Best: (13.01621804918917, #778))
+Generation Stuff: (Gen #: 900, Fitness: 13.01621804918917, Best: (13.01621804918917, #778))
+Generation Stuff: (Gen #: 910, Fitness: 13.01621804918917, Best: (13.01621804918917, #778))
+Generation Stuff: (Gen #: 920, Fitness: 13.01621804918917, Best: (13.01621804918917, #778))
+Generation Stuff: (Gen #: 930, Fitness: 13.01621804918917, Best: (13.01621804918917, #778))
+Generation Stuff: (Gen #: 940, Fitness: 13.01621804918917, Best: (13.01621804918917, #778))
+Generation Stuff: (Gen #: 950, Fitness: 13.01621804918917, Best: (13.01621804918917, #778))
+Generation Stuff: (Gen #: 960, Fitness: 13.01621804918917, Best: (13.01621804918917, #778))
+Generation Stuff: (Gen #: 970, Fitness: 13.01621804918917, Best: (13.01621804918917, #778))
+Generation Stuff: (Gen #: 980, Fitness: 13.01621804918917, Best: (13.01621804918917, #778))
+Generation Stuff: (Gen #: 990, Fitness: 13.01621804918917, Best: (13.01621804918917, #778))
+
+(ox) C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2>python project2_tsp.py
+2021-02-19 05:58:14 Configured OSMnx 1.0.1
+2021-02-19 05:58:14 HTTP response caching is on
+2021-02-19 05:58:14 Retrieved response from cache file "cache\ec5340eb372a7efb2038ee9edc402b4263c2c6dc.json"
+2021-02-19 05:58:14 Geocoded "1276 Gilbreath Drive, Johnson City, Washington County, Tennessee, 37614, United States" to (36.3022214, -82.36945750910178)
+2021-02-19 05:58:14 Created bbox 8000 m from (36.3022214, -82.36945750910178): 36.37416702683943,36.23027577316057,-82.28018445895087,-82.45873055925269
+2021-02-19 05:58:14 Projected GeoDataFrame to +proj=utm +zone=17 +ellps=WGS84 +datum=WGS84 +units=m +no_defs +type=crs
+2021-02-19 05:58:14 Projected GeoDataFrame to epsg:4326
+2021-02-19 05:58:14 Projected GeoDataFrame to +proj=utm +zone=17 +ellps=WGS84 +datum=WGS84 +units=m +no_defs +type=crs
+2021-02-19 05:58:14 Projected GeoDataFrame to epsg:4326
+2021-02-19 05:58:14 Requesting data within polygon from API in 1 request(s)
+2021-02-19 05:58:14 Retrieved response from cache file "cache\cf1001bbae7045b5dc11e71142e6343c55ea4234.json"
+2021-02-19 05:58:14 Got all network data within polygon from API in 1 request(s)
+2021-02-19 05:58:14 Creating graph from downloaded OSM data...
+2021-02-19 05:58:15 Created graph with 28281 nodes and 55440 edges
+2021-02-19 05:58:16 Added edge lengths to graph
+2021-02-19 05:58:16 Identifying all nodes that lie outside the polygon...
+2021-02-19 05:58:18 Created nodes GeoDataFrame from graph
+2021-02-19 05:58:20 Created r-tree spatial index for 28281 geometries
+2021-02-19 05:58:21 Identified 26778 geometries inside polygon
+2021-02-19 05:58:21 Removed 1503 nodes outside polygon
+2021-02-19 05:58:21 Truncated graph by polygon
+2021-02-19 05:58:22 Begin topologically simplifying the graph...
+2021-02-19 05:58:23 Identified 4984 edge endpoints
+2021-02-19 05:58:26 Simplified graph: 26778 to 4984 nodes, 52467 to 11993 edges
+2021-02-19 05:58:26 Identifying all nodes that lie outside the polygon...
+2021-02-19 05:58:26 Created nodes GeoDataFrame from graph
+2021-02-19 05:58:27 Created r-tree spatial index for 4984 geometries
+2021-02-19 05:58:27 Identified 4584 geometries inside polygon
+2021-02-19 05:58:27 Removed 400 nodes outside polygon
+2021-02-19 05:58:27 Removed 6 isolated nodes
+2021-02-19 05:58:27 Got largest weakly connected component (4514 of 4578 total nodes)
+2021-02-19 05:58:27 Truncated graph by polygon
+2021-02-19 05:58:28 Counted undirected street segments incident to each node
+2021-02-19 05:58:28 graph_from_polygon returned graph with 4514 nodes and 11041 edges
+2021-02-19 05:58:28 graph_from_bbox returned graph with 4514 nodes and 11041 edges
+2021-02-19 05:58:28 graph_from_point returned graph with 4514 nodes and 11041 edges
+2021-02-19 05:58:28 graph_from_address returned graph with 4514 nodes and 11041 edges
+2021-02-19 05:58:28 Found nearest node (1721006282) to point (36.3044549, -82.3632187)
+2021-02-19 05:58:28 Found nearest node (1721006282) to point (36.3044549, -82.3632187)
+2021-02-19 05:58:28 Found nearest node (2405288504) to point (36.33852499, -82.40324691)
+2021-02-19 05:58:28 Found nearest node (204021995) to point (36.418737, -82.470076)
+2021-02-19 05:58:28 Found nearest node (3639524034) to point (36.31345969, -82.38399434)
+2021-02-19 05:58:28 Found nearest node (204024349) to point (36.310934, -82.433682)
+2021-02-19 05:58:28 Found nearest node (2002564198) to point (36.34799053, -82.40588729)
+2021-02-19 05:58:28 Found nearest node (2002564198) to point (36.34799988, -82.4058357)
+2021-02-19 05:58:28 Found nearest node (204001172) to point (36.32687143, -82.39349586)
+2021-02-19 05:58:28 Found nearest node (2402075819) to point (36.3049161, -82.3874892)
+2021-02-19 05:58:28 Found nearest node (204021995) to point (36.4145034, -82.46873333)
+2021-02-19 05:58:28 Found nearest node (203975701) to point (36.32113902, -82.35648265)
+2021-02-19 05:58:28 Found nearest node (203975735) to point (36.326309, -82.351398)
+2021-02-19 05:58:28 Found nearest node (2402075921) to point (36.30524864, -82.3845971)
+2021-02-19 05:58:28 Found nearest node (204041311) to point (36.329174, -82.391683)
+2021-02-19 05:58:28 Found nearest node (204019752) to point (36.34958, -82.37264)
+2021-02-19 05:58:28 Found nearest node (2405426450) to point (36.36190274, -82.40080228)
+2021-02-19 05:58:28 Found nearest node (204025819) to point (36.37372032, -82.42759672)
+2021-02-19 05:58:28 Found nearest node (2405288420) to point (36.33788879, -82.39939419)
+2021-02-19 05:58:28 Found nearest node (204013059) to point (36.35521525, -82.37348719)
+2021-02-19 05:58:28 Found nearest node (2402075819) to point (36.3049161, -82.3874892)
+2021-02-19 05:58:28 Found nearest node (2405534826) to point (36.35003818, -82.37211291)
+2021-02-19 05:58:28 Found nearest node (2405288504) to point (36.33854073, -82.40328037)
+2021-02-19 05:58:28 Found nearest node (203980428) to point (36.351669, -82.370903)
+2021-02-19 05:58:28 Found nearest node (2030099438) to point (36.31587997, -82.39096867)
+2021-02-19 05:58:28 Found nearest node (203989183) to point (36.30689139, -82.36515662)
+2021-02-19 05:58:28 Found nearest node (203965210) to point (36.30910511, -82.39841053)
+2021-02-19 05:58:28 Found nearest node (2405276713) to point (36.34067819, -82.39840076)
+2021-02-19 05:58:28 Found nearest node (2405276713) to point (36.34073133, -82.3983999)
+2021-02-19 05:58:28 Found nearest node (203996723) to point (36.36497043, -82.38123284)
+2021-02-19 05:58:28 Found nearest node (204025819) to point (36.3790394, -82.4256193)
+2021-02-19 05:58:28 Found nearest node (6612143729) to point (36.31652865, -82.35195127)
+2021-02-19 05:58:28 Found nearest node (204015969) to point (36.32034629, -82.35488939)
+2021-02-19 05:58:28 Found nearest node (203974717) to point (36.319957, -82.357684)
+2021-02-19 05:58:28 Found nearest node (203978466) to point (36.318791, -82.347113)
+2021-02-19 05:58:28 Found nearest node (204000165) to point (36.31658165, -82.37235352)
+2021-02-19 05:58:28 Found nearest node (1271620020) to point (36.3016612, -82.3378302)
+2021-02-19 05:58:28 Found nearest node (1247210027) to point (36.30837207, -82.38576411)
+2021-02-19 05:58:28 Found nearest node (204019752) to point (36.34997658, -82.3736047)
+2021-02-19 05:58:28 Found nearest node (203959303) to point (36.35330624, -82.37561378)
+2021-02-19 05:58:28 Found nearest node (203959303) to point (36.3539211, -82.3753026)
+2021-02-19 05:58:28 Found nearest node (2405404965) to point (36.34272181, -82.39928527)
+There were 32 unique points found.
+Random seed is: 1613732308078913300
+First 3 values are: 7, 1, 0
+Generation Stuff: (Gen #: 0, Fitness: 66.33203391798034, Best: (66.33203391798034, #0))
+Generation Stuff: (Gen #: 10, Fitness: 25.53691221698833, Best: (25.53691221698833, #10))
+Generation Stuff: (Gen #: 20, Fitness: 17.25986303881308, Best: (17.25986303881308, #20))
+Generation Stuff: (Gen #: 30, Fitness: 13.792608582060016, Best: (13.792608582060016, #30))
+Generation Stuff: (Gen #: 40, Fitness: 12.974766459673301, Best: (12.974766459673301, #35))
+Generation Stuff: (Gen #: 50, Fitness: 12.974766459673301, Best: (12.974766459673301, #35))
+Generation Stuff: (Gen #: 60, Fitness: 12.950709641890871, Best: (12.950709641890871, #60))
+Generation Stuff: (Gen #: 70, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 80, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 90, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 100, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 110, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 120, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 130, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 140, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 150, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 160, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 170, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 180, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 190, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 200, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 210, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 220, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 230, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 240, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 250, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 260, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 270, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 280, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 290, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 300, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 310, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 320, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 330, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 340, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 350, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 360, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 370, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 380, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 390, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 400, Fitness: 12.872018580047827, Best: (12.872018580047827, #66))
+Generation Stuff: (Gen #: 410, Fitness: 12.330044444323699, Best: (12.330044444323699, #403))
+Generation Stuff: (Gen #: 420, Fitness: 12.330044444323699, Best: (12.330044444323699, #403))
+Generation Stuff: (Gen #: 430, Fitness: 12.330044444323699, Best: (12.330044444323699, #403))
+Generation Stuff: (Gen #: 440, Fitness: 12.330044444323699, Best: (12.330044444323699, #403))
+Generation Stuff: (Gen #: 450, Fitness: 12.330044444323699, Best: (12.330044444323699, #403))
+Generation Stuff: (Gen #: 460, Fitness: 12.330044444323699, Best: (12.330044444323699, #403))
+Generation Stuff: (Gen #: 470, Fitness: 12.330044444323699, Best: (12.330044444323699, #403))
+Generation Stuff: (Gen #: 480, Fitness: 12.330044444323699, Best: (12.330044444323699, #403))
+Generation Stuff: (Gen #: 490, Fitness: 12.330044444323699, Best: (12.330044444323699, #403))
+Generation Stuff: (Gen #: 500, Fitness: 12.330044444323699, Best: (12.330044444323699, #403))
+Generation Stuff: (Gen #: 510, Fitness: 12.330044444323699, Best: (12.330044444323699, #403))
+Traceback (most recent call last):
+  File "C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2\project2_tsp.py", line 467, in <module>
+    main()
+  File "C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2\project2_tsp.py", line 459, in main
+    run_ga()
+  File "C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2\project2_tsp.py", line 392, in run_ga
+    repopulate(gen + 1)
+  File "C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2\project2_tsp.py", line 238, in repopulate
+    my_population.append(calculate_fitness(child))
+  File "C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2\project2_tsp.py", line 174, in calculate_fitness
+    fitness += get_distance(nodeA_id, nodeB_id)
+  File "C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2\project2_tsp.py", line 154, in get_distance
+    return haversine(nodeA_id, nodeB_id)
+  File "C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2\project2_tsp.py", line 145, in haversine
+    G.nodes[point2]['y'],
+  File "D:\Anaconda3\envs\ox\lib\site-packages\networkx\classes\reportviews.py", line 186, in __getitem__
+    def __getitem__(self, n):
+KeyboardInterrupt
+^C
+(ox) C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2>python project2_tsp.py
+2021-02-19 06:00:50 Configured OSMnx 1.0.1
+2021-02-19 06:00:50 HTTP response caching is on
+2021-02-19 06:00:50 Retrieved response from cache file "cache\ec5340eb372a7efb2038ee9edc402b4263c2c6dc.json"
+2021-02-19 06:00:50 Geocoded "1276 Gilbreath Drive, Johnson City, Washington County, Tennessee, 37614, United States" to (36.3022214, -82.36945750910178)
+2021-02-19 06:00:50 Created bbox 8000 m from (36.3022214, -82.36945750910178): 36.37416702683943,36.23027577316057,-82.28018445895087,-82.45873055925269
+2021-02-19 06:00:50 Projected GeoDataFrame to +proj=utm +zone=17 +ellps=WGS84 +datum=WGS84 +units=m +no_defs +type=crs
+2021-02-19 06:00:50 Projected GeoDataFrame to epsg:4326
+2021-02-19 06:00:50 Projected GeoDataFrame to +proj=utm +zone=17 +ellps=WGS84 +datum=WGS84 +units=m +no_defs +type=crs
+2021-02-19 06:00:50 Projected GeoDataFrame to epsg:4326
+2021-02-19 06:00:50 Requesting data within polygon from API in 1 request(s)
+2021-02-19 06:00:51 Retrieved response from cache file "cache\cf1001bbae7045b5dc11e71142e6343c55ea4234.json"
+2021-02-19 06:00:51 Got all network data within polygon from API in 1 request(s)
+2021-02-19 06:00:51 Creating graph from downloaded OSM data...
+2021-02-19 06:00:51 Created graph with 28281 nodes and 55440 edges
+2021-02-19 06:00:52 Added edge lengths to graph
+2021-02-19 06:00:52 Identifying all nodes that lie outside the polygon...
+2021-02-19 06:00:53 Created nodes GeoDataFrame from graph
+2021-02-19 06:00:55 Created r-tree spatial index for 28281 geometries
+2021-02-19 06:00:56 Identified 26778 geometries inside polygon
+2021-02-19 06:00:56 Removed 1503 nodes outside polygon
+2021-02-19 06:00:56 Truncated graph by polygon
+2021-02-19 06:00:56 Begin topologically simplifying the graph...
+2021-02-19 06:00:57 Identified 4984 edge endpoints
+2021-02-19 06:01:00 Simplified graph: 26778 to 4984 nodes, 52467 to 11993 edges
+2021-02-19 06:01:00 Identifying all nodes that lie outside the polygon...
+2021-02-19 06:01:00 Created nodes GeoDataFrame from graph
+2021-02-19 06:01:00 Created r-tree spatial index for 4984 geometries
+2021-02-19 06:01:00 Identified 4584 geometries inside polygon
+2021-02-19 06:01:00 Removed 400 nodes outside polygon
+2021-02-19 06:01:00 Removed 6 isolated nodes
+2021-02-19 06:01:01 Got largest weakly connected component (4514 of 4578 total nodes)
+2021-02-19 06:01:01 Truncated graph by polygon
+2021-02-19 06:01:01 Counted undirected street segments incident to each node
+2021-02-19 06:01:01 graph_from_polygon returned graph with 4514 nodes and 11041 edges
+2021-02-19 06:01:01 graph_from_bbox returned graph with 4514 nodes and 11041 edges
+2021-02-19 06:01:01 graph_from_point returned graph with 4514 nodes and 11041 edges
+2021-02-19 06:01:01 graph_from_address returned graph with 4514 nodes and 11041 edges
+2021-02-19 06:01:01 Found nearest node (1721006282) to point (36.3044549, -82.3632187)
+2021-02-19 06:01:01 Found nearest node (1721006282) to point (36.3044549, -82.3632187)
+2021-02-19 06:01:01 Found nearest node (2405288504) to point (36.33852499, -82.40324691)
+2021-02-19 06:01:01 Found nearest node (204021995) to point (36.418737, -82.470076)
+2021-02-19 06:01:01 Found nearest node (3639524034) to point (36.31345969, -82.38399434)
+2021-02-19 06:01:01 Found nearest node (204024349) to point (36.310934, -82.433682)
+2021-02-19 06:01:01 Found nearest node (2002564198) to point (36.34799053, -82.40588729)
+2021-02-19 06:01:01 Found nearest node (2002564198) to point (36.34799988, -82.4058357)
+2021-02-19 06:01:01 Found nearest node (204001172) to point (36.32687143, -82.39349586)
+2021-02-19 06:01:01 Found nearest node (2402075819) to point (36.3049161, -82.3874892)
+2021-02-19 06:01:01 Found nearest node (204021995) to point (36.4145034, -82.46873333)
+2021-02-19 06:01:01 Found nearest node (203975701) to point (36.32113902, -82.35648265)
+2021-02-19 06:01:01 Found nearest node (203975735) to point (36.326309, -82.351398)
+2021-02-19 06:01:01 Found nearest node (2402075921) to point (36.30524864, -82.3845971)
+2021-02-19 06:01:01 Found nearest node (204041311) to point (36.329174, -82.391683)
+2021-02-19 06:01:01 Found nearest node (204019752) to point (36.34958, -82.37264)
+2021-02-19 06:01:01 Found nearest node (2405426450) to point (36.36190274, -82.40080228)
+2021-02-19 06:01:01 Found nearest node (204025819) to point (36.37372032, -82.42759672)
+2021-02-19 06:01:01 Found nearest node (2405288420) to point (36.33788879, -82.39939419)
+2021-02-19 06:01:01 Found nearest node (204013059) to point (36.35521525, -82.37348719)
+2021-02-19 06:01:01 Found nearest node (2402075819) to point (36.3049161, -82.3874892)
+2021-02-19 06:01:01 Found nearest node (2405534826) to point (36.35003818, -82.37211291)
+2021-02-19 06:01:01 Found nearest node (2405288504) to point (36.33854073, -82.40328037)
+2021-02-19 06:01:01 Found nearest node (203980428) to point (36.351669, -82.370903)
+2021-02-19 06:01:01 Found nearest node (2030099438) to point (36.31587997, -82.39096867)
+2021-02-19 06:01:01 Found nearest node (203989183) to point (36.30689139, -82.36515662)
+2021-02-19 06:01:01 Found nearest node (203965210) to point (36.30910511, -82.39841053)
+2021-02-19 06:01:01 Found nearest node (2405276713) to point (36.34067819, -82.39840076)
+2021-02-19 06:01:01 Found nearest node (2405276713) to point (36.34073133, -82.3983999)
+2021-02-19 06:01:01 Found nearest node (203996723) to point (36.36497043, -82.38123284)
+2021-02-19 06:01:01 Found nearest node (204025819) to point (36.3790394, -82.4256193)
+2021-02-19 06:01:01 Found nearest node (6612143729) to point (36.31652865, -82.35195127)
+2021-02-19 06:01:02 Found nearest node (204015969) to point (36.32034629, -82.35488939)
+2021-02-19 06:01:02 Found nearest node (203974717) to point (36.319957, -82.357684)
+2021-02-19 06:01:02 Found nearest node (203978466) to point (36.318791, -82.347113)
+2021-02-19 06:01:02 Found nearest node (204000165) to point (36.31658165, -82.37235352)
+2021-02-19 06:01:02 Found nearest node (1271620020) to point (36.3016612, -82.3378302)
+2021-02-19 06:01:02 Found nearest node (1247210027) to point (36.30837207, -82.38576411)
+2021-02-19 06:01:02 Found nearest node (204019752) to point (36.34997658, -82.3736047)
+2021-02-19 06:01:02 Found nearest node (203959303) to point (36.35330624, -82.37561378)
+2021-02-19 06:01:02 Found nearest node (203959303) to point (36.3539211, -82.3753026)
+2021-02-19 06:01:02 Found nearest node (2405404965) to point (36.34272181, -82.39928527)
+There were 32 unique points found.
+Random seed is: 1613732461529666800
+First 3 values are: 6, 7, 2
+Generation Stuff: (Gen #: 0, Fitness: 67.23448321087858, Best: (67.23448321087858, #0))
+Generation Stuff: (Gen #: 10, Fitness: 25.930017336864143, Best: (25.930017336864143, #10))
+Generation Stuff: (Gen #: 20, Fitness: 18.48580693387693, Best: (18.48580693387693, #20))
+Generation Stuff: (Gen #: 30, Fitness: 15.935820490891832, Best: (15.935820490891832, #30))
+Generation Stuff: (Gen #: 40, Fitness: 14.040719546064484, Best: (14.040719546064484, #40))
+Generation Stuff: (Gen #: 50, Fitness: 13.956997769596587, Best: (13.956997769596587, #42))
+Generation Stuff: (Gen #: 60, Fitness: 13.363720919200134, Best: (13.363720919200134, #60))
+Generation Stuff: (Gen #: 70, Fitness: 13.362278884829326, Best: (13.362278884829326, #66))
+Generation Stuff: (Gen #: 80, Fitness: 13.362278884829326, Best: (13.362278884829326, #66))
+Generation Stuff: (Gen #: 90, Fitness: 13.19515124021759, Best: (13.19515124021759, #83))
+Generation Stuff: (Gen #: 100, Fitness: 13.19515124021759, Best: (13.19515124021759, #83))
+Generation Stuff: (Gen #: 110, Fitness: 13.19515124021759, Best: (13.19515124021759, #83))
+Generation Stuff: (Gen #: 120, Fitness: 13.19515124021759, Best: (13.19515124021759, #83))
+Generation Stuff: (Gen #: 130, Fitness: 13.19515124021759, Best: (13.19515124021759, #83))
+Generation Stuff: (Gen #: 140, Fitness: 13.19515124021759, Best: (13.19515124021759, #83))
+Generation Stuff: (Gen #: 150, Fitness: 13.19515124021759, Best: (13.19515124021759, #83))
+Generation Stuff: (Gen #: 160, Fitness: 13.19515124021759, Best: (13.19515124021759, #83))
+Generation Stuff: (Gen #: 170, Fitness: 13.19515124021759, Best: (13.19515124021759, #83))
+Generation Stuff: (Gen #: 180, Fitness: 13.19515124021759, Best: (13.19515124021759, #83))
+Generation Stuff: (Gen #: 190, Fitness: 13.19515124021759, Best: (13.19515124021759, #83))
+Generation Stuff: (Gen #: 200, Fitness: 13.19515124021759, Best: (13.19515124021759, #83))
+Generation Stuff: (Gen #: 210, Fitness: 13.19515124021759, Best: (13.19515124021759, #83))
+Generation Stuff: (Gen #: 220, Fitness: 13.19515124021759, Best: (13.19515124021759, #83))
+Generation Stuff: (Gen #: 230, Fitness: 13.19515124021759, Best: (13.19515124021759, #83))
+Generation Stuff: (Gen #: 240, Fitness: 13.19515124021759, Best: (13.19515124021759, #83))
+Generation Stuff: (Gen #: 250, Fitness: 12.639120728511163, Best: (12.639120728511163, #243))
+Generation Stuff: (Gen #: 260, Fitness: 12.639120728511163, Best: (12.639120728511163, #243))
+Generation Stuff: (Gen #: 270, Fitness: 12.639120728511163, Best: (12.639120728511163, #243))
+Generation Stuff: (Gen #: 280, Fitness: 12.639120728511163, Best: (12.639120728511163, #243))
+Generation Stuff: (Gen #: 290, Fitness: 12.639120728511163, Best: (12.639120728511163, #243))
+Generation Stuff: (Gen #: 300, Fitness: 12.639120728511163, Best: (12.639120728511163, #243))
+Generation Stuff: (Gen #: 310, Fitness: 12.639120728511163, Best: (12.639120728511163, #243))
+Generation Stuff: (Gen #: 320, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 330, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 340, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 350, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 360, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 370, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 380, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 390, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 400, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 410, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 420, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 430, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 440, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 450, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 460, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 470, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 480, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 490, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 500, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 510, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 520, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 530, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 540, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 550, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 560, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 570, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 580, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 590, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 600, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 610, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 620, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 630, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 640, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 650, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 660, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 670, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Generation Stuff: (Gen #: 680, Fitness: 12.483304871613367, Best: (12.483304871613367, #312))
+Traceback (most recent call last):
+  File "C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2\project2_tsp.py", line 467, in <module>
+    main()
+  File "C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2\project2_tsp.py", line 459, in main
+    run_ga()
+  File "C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2\project2_tsp.py", line 392, in run_ga
+    repopulate(gen + 1)
+  File "C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2\project2_tsp.py", line 238, in repopulate
+    my_population.append(calculate_fitness(child))
+  File "C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2\project2_tsp.py", line 174, in calculate_fitness
+    fitness += get_distance(nodeA_id, nodeB_id)
+  File "C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2\project2_tsp.py", line 154, in get_distance
+    return haversine(nodeA_id, nodeB_id)
+  File "C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2\project2_tsp.py", line 142, in haversine
+    return ox.distance.great_circle_vec(
+  File "D:\Anaconda3\envs\ox\lib\site-packages\osmnx\distance.py", line 61, in great_circle_vec
+    h = np.sin(d_phi / 2) ** 2 + np.cos(phi1) * np.cos(phi2) * np.sin(d_theta / 2) ** 2
+KeyboardInterrupt
+^C
+(ox) C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2>python project2_tsp.py
+2021-02-19 06:03:44 Configured OSMnx 1.0.1
+2021-02-19 06:03:44 HTTP response caching is on
+2021-02-19 06:03:44 Retrieved response from cache file "cache\ec5340eb372a7efb2038ee9edc402b4263c2c6dc.json"
+2021-02-19 06:03:44 Geocoded "1276 Gilbreath Drive, Johnson City, Washington County, Tennessee, 37614, United States" to (36.3022214, -82.36945750910178)
+2021-02-19 06:03:44 Created bbox 8000 m from (36.3022214, -82.36945750910178): 36.37416702683943,36.23027577316057,-82.28018445895087,-82.45873055925269
+2021-02-19 06:03:44 Projected GeoDataFrame to +proj=utm +zone=17 +ellps=WGS84 +datum=WGS84 +units=m +no_defs +type=crs
+2021-02-19 06:03:44 Projected GeoDataFrame to epsg:4326
+2021-02-19 06:03:45 Projected GeoDataFrame to +proj=utm +zone=17 +ellps=WGS84 +datum=WGS84 +units=m +no_defs +type=crs
+2021-02-19 06:03:45 Projected GeoDataFrame to epsg:4326
+2021-02-19 06:03:45 Requesting data within polygon from API in 1 request(s)
+2021-02-19 06:03:45 Retrieved response from cache file "cache\cf1001bbae7045b5dc11e71142e6343c55ea4234.json"
+2021-02-19 06:03:45 Got all network data within polygon from API in 1 request(s)
+2021-02-19 06:03:45 Creating graph from downloaded OSM data...
+2021-02-19 06:03:46 Created graph with 28281 nodes and 55440 edges
+2021-02-19 06:03:46 Added edge lengths to graph
+2021-02-19 06:03:46 Identifying all nodes that lie outside the polygon...
+2021-02-19 06:03:48 Created nodes GeoDataFrame from graph
+2021-02-19 06:03:51 Created r-tree spatial index for 28281 geometries
+2021-02-19 06:03:52 Identified 26778 geometries inside polygon
+2021-02-19 06:03:53 Removed 1503 nodes outside polygon
+2021-02-19 06:03:53 Truncated graph by polygon
+2021-02-19 06:03:53 Begin topologically simplifying the graph...
+2021-02-19 06:03:54 Identified 4984 edge endpoints
+2021-02-19 06:03:58 Simplified graph: 26778 to 4984 nodes, 52467 to 11993 edges
+2021-02-19 06:03:58 Identifying all nodes that lie outside the polygon...
+2021-02-19 06:03:58 Created nodes GeoDataFrame from graph
+2021-02-19 06:03:58 Created r-tree spatial index for 4984 geometries
+2021-02-19 06:03:58 Identified 4584 geometries inside polygon
+2021-02-19 06:03:59 Removed 400 nodes outside polygon
+2021-02-19 06:03:59 Removed 6 isolated nodes
+2021-02-19 06:03:59 Got largest weakly connected component (4514 of 4578 total nodes)
+2021-02-19 06:03:59 Truncated graph by polygon
+2021-02-19 06:03:59 Counted undirected street segments incident to each node
+2021-02-19 06:03:59 graph_from_polygon returned graph with 4514 nodes and 11041 edges
+2021-02-19 06:04:00 graph_from_bbox returned graph with 4514 nodes and 11041 edges
+2021-02-19 06:04:00 graph_from_point returned graph with 4514 nodes and 11041 edges
+2021-02-19 06:04:00 graph_from_address returned graph with 4514 nodes and 11041 edges
+2021-02-19 06:04:00 Found nearest node (1721006282) to point (36.3044549, -82.3632187)
+2021-02-19 06:04:00 Found nearest node (1721006282) to point (36.3044549, -82.3632187)
+2021-02-19 06:04:00 Found nearest node (2405288504) to point (36.33852499, -82.40324691)
+2021-02-19 06:04:00 Found nearest node (204021995) to point (36.418737, -82.470076)
+2021-02-19 06:04:00 Found nearest node (3639524034) to point (36.31345969, -82.38399434)
+2021-02-19 06:04:00 Found nearest node (204024349) to point (36.310934, -82.433682)
+2021-02-19 06:04:00 Found nearest node (2002564198) to point (36.34799053, -82.40588729)
+2021-02-19 06:04:00 Found nearest node (2002564198) to point (36.34799988, -82.4058357)
+2021-02-19 06:04:00 Found nearest node (204001172) to point (36.32687143, -82.39349586)
+2021-02-19 06:04:00 Found nearest node (2402075819) to point (36.3049161, -82.3874892)
+2021-02-19 06:04:00 Found nearest node (204021995) to point (36.4145034, -82.46873333)
+2021-02-19 06:04:00 Found nearest node (203975701) to point (36.32113902, -82.35648265)
+2021-02-19 06:04:00 Found nearest node (203975735) to point (36.326309, -82.351398)
+2021-02-19 06:04:00 Found nearest node (2402075921) to point (36.30524864, -82.3845971)
+2021-02-19 06:04:00 Found nearest node (204041311) to point (36.329174, -82.391683)
+2021-02-19 06:04:00 Found nearest node (204019752) to point (36.34958, -82.37264)
+2021-02-19 06:04:00 Found nearest node (2405426450) to point (36.36190274, -82.40080228)
+2021-02-19 06:04:00 Found nearest node (204025819) to point (36.37372032, -82.42759672)
+2021-02-19 06:04:00 Found nearest node (2405288420) to point (36.33788879, -82.39939419)
+2021-02-19 06:04:00 Found nearest node (204013059) to point (36.35521525, -82.37348719)
+2021-02-19 06:04:00 Found nearest node (2402075819) to point (36.3049161, -82.3874892)
+2021-02-19 06:04:00 Found nearest node (2405534826) to point (36.35003818, -82.37211291)
+2021-02-19 06:04:00 Found nearest node (2405288504) to point (36.33854073, -82.40328037)
+2021-02-19 06:04:00 Found nearest node (203980428) to point (36.351669, -82.370903)
+2021-02-19 06:04:00 Found nearest node (2030099438) to point (36.31587997, -82.39096867)
+2021-02-19 06:04:00 Found nearest node (203989183) to point (36.30689139, -82.36515662)
+2021-02-19 06:04:00 Found nearest node (203965210) to point (36.30910511, -82.39841053)
+2021-02-19 06:04:00 Found nearest node (2405276713) to point (36.34067819, -82.39840076)
+2021-02-19 06:04:00 Found nearest node (2405276713) to point (36.34073133, -82.3983999)
+2021-02-19 06:04:00 Found nearest node (203996723) to point (36.36497043, -82.38123284)
+2021-02-19 06:04:00 Found nearest node (204025819) to point (36.3790394, -82.4256193)
+2021-02-19 06:04:00 Found nearest node (6612143729) to point (36.31652865, -82.35195127)
+2021-02-19 06:04:00 Found nearest node (204015969) to point (36.32034629, -82.35488939)
+2021-02-19 06:04:00 Found nearest node (203974717) to point (36.319957, -82.357684)
+2021-02-19 06:04:00 Found nearest node (203978466) to point (36.318791, -82.347113)
+2021-02-19 06:04:00 Found nearest node (204000165) to point (36.31658165, -82.37235352)
+2021-02-19 06:04:00 Found nearest node (1271620020) to point (36.3016612, -82.3378302)
+2021-02-19 06:04:00 Found nearest node (1247210027) to point (36.30837207, -82.38576411)
+2021-02-19 06:04:00 Found nearest node (204019752) to point (36.34997658, -82.3736047)
+2021-02-19 06:04:00 Found nearest node (203959303) to point (36.35330624, -82.37561378)
+2021-02-19 06:04:00 Found nearest node (203959303) to point (36.3539211, -82.3753026)
+2021-02-19 06:04:00 Found nearest node (2405404965) to point (36.34272181, -82.39928527)
+There were 32 unique points found.
+Random seed is: 1613732640051901600
+First 3 values are: 6, 2, 4
+Generation Stuff: (Gen #: 0, Fitness: 68.87047995312983, Best: (68.87047995312983, #0))
+Generation Stuff: (Gen #: 10, Fitness: 31.051343667290777, Best: (31.051343667290777, #10))
+Generation Stuff: (Gen #: 20, Fitness: 15.042953574745855, Best: (15.042953574745855, #20))
+Generation Stuff: (Gen #: 30, Fitness: 11.905315840651491, Best: (11.905315840651491, #28))
+Generation Stuff: (Gen #: 40, Fitness: 11.536931579294452, Best: (11.536931579294452, #40))
+Generation Stuff: (Gen #: 50, Fitness: 11.092653340486036, Best: (11.092653340486036, #50))
+(ox) C:\Users\JakeG\OneDrive - East Tennessee State University\Graduate School\Spring 2021\Artificial Intelligence\Project 2>python project2_tsp.py
+2021-02-19 06:05:51 Configured OSMnx 1.0.1
+2021-02-19 06:05:51 HTTP response caching is on
+2021-02-19 06:05:51 Retrieved response from cache file "cache\ec5340eb372a7efb2038ee9edc402b4263c2c6dc.json"
+2021-02-19 06:05:51 Geocoded "1276 Gilbreath Drive, Johnson City, Washington County, Tennessee, 37614, United States" to (36.3022214, -82.36945750910178)
+2021-02-19 06:05:51 Created bbox 8000 m from (36.3022214, -82.36945750910178): 36.37416702683943,36.23027577316057,-82.28018445895087,-82.45873055925269
+2021-02-19 06:05:51 Projected GeoDataFrame to +proj=utm +zone=17 +ellps=WGS84 +datum=WGS84 +units=m +no_defs +type=crs
+2021-02-19 06:05:51 Projected GeoDataFrame to epsg:4326
+2021-02-19 06:05:51 Projected GeoDataFrame to +proj=utm +zone=17 +ellps=WGS84 +datum=WGS84 +units=m +no_defs +type=crs
+2021-02-19 06:05:51 Projected GeoDataFrame to epsg:4326
+2021-02-19 06:05:51 Requesting data within polygon from API in 1 request(s)
+2021-02-19 06:05:51 Retrieved response from cache file "cache\cf1001bbae7045b5dc11e71142e6343c55ea4234.json"
+2021-02-19 06:05:51 Got all network data within polygon from API in 1 request(s)
+2021-02-19 06:05:51 Creating graph from downloaded OSM data...
+2021-02-19 06:05:52 Created graph with 28281 nodes and 55440 edges
+2021-02-19 06:05:53 Added edge lengths to graph
+2021-02-19 06:05:53 Identifying all nodes that lie outside the polygon...
+2021-02-19 06:05:55 Created nodes GeoDataFrame from graph
+2021-02-19 06:05:57 Created r-tree spatial index for 28281 geometries
+2021-02-19 06:05:58 Identified 26778 geometries inside polygon
+2021-02-19 06:05:59 Removed 1503 nodes outside polygon
+2021-02-19 06:05:59 Truncated graph by polygon
+2021-02-19 06:05:59 Begin topologically simplifying the graph...
+2021-02-19 06:06:00 Identified 4984 edge endpoints
+2021-02-19 06:06:04 Simplified graph: 26778 to 4984 nodes, 52467 to 11993 edges
+2021-02-19 06:06:04 Identifying all nodes that lie outside the polygon...
+2021-02-19 06:06:04 Created nodes GeoDataFrame from graph
+2021-02-19 06:06:04 Created r-tree spatial index for 4984 geometries
+2021-02-19 06:06:05 Identified 4584 geometries inside polygon
+2021-02-19 06:06:05 Removed 400 nodes outside polygon
+2021-02-19 06:06:05 Removed 6 isolated nodes
+2021-02-19 06:06:05 Got largest weakly connected component (4514 of 4578 total nodes)
+2021-02-19 06:06:05 Truncated graph by polygon
+2021-02-19 06:06:06 Counted undirected street segments incident to each node
+2021-02-19 06:06:06 graph_from_polygon returned graph with 4514 nodes and 11041 edges
+2021-02-19 06:06:06 graph_from_bbox returned graph with 4514 nodes and 11041 edges
+2021-02-19 06:06:06 graph_from_point returned graph with 4514 nodes and 11041 edges
+2021-02-19 06:06:06 graph_from_address returned graph with 4514 nodes and 11041 edges
+2021-02-19 06:06:06 Found nearest node (1721006282) to point (36.3044549, -82.3632187)
+2021-02-19 06:06:06 Found nearest node (1721006282) to point (36.3044549, -82.3632187)
+2021-02-19 06:06:06 Found nearest node (2405288504) to point (36.33852499, -82.40324691)
+2021-02-19 06:06:06 Found nearest node (204021995) to point (36.418737, -82.470076)
+2021-02-19 06:06:06 Found nearest node (3639524034) to point (36.31345969, -82.38399434)
+2021-02-19 06:06:06 Found nearest node (204024349) to point (36.310934, -82.433682)
+2021-02-19 06:06:06 Found nearest node (2002564198) to point (36.34799053, -82.40588729)
+2021-02-19 06:06:06 Found nearest node (2002564198) to point (36.34799988, -82.4058357)
+2021-02-19 06:06:06 Found nearest node (204001172) to point (36.32687143, -82.39349586)
+2021-02-19 06:06:06 Found nearest node (2402075819) to point (36.3049161, -82.3874892)
+2021-02-19 06:06:06 Found nearest node (204021995) to point (36.4145034, -82.46873333)
+2021-02-19 06:06:06 Found nearest node (203975701) to point (36.32113902, -82.35648265)
+2021-02-19 06:06:06 Found nearest node (203975735) to point (36.326309, -82.351398)
+2021-02-19 06:06:06 Found nearest node (2402075921) to point (36.30524864, -82.3845971)
+2021-02-19 06:06:06 Found nearest node (204041311) to point (36.329174, -82.391683)
+2021-02-19 06:06:06 Found nearest node (204019752) to point (36.34958, -82.37264)
+2021-02-19 06:06:06 Found nearest node (2405426450) to point (36.36190274, -82.40080228)
+2021-02-19 06:06:06 Found nearest node (204025819) to point (36.37372032, -82.42759672)
+2021-02-19 06:06:06 Found nearest node (2405288420) to point (36.33788879, -82.39939419)
+2021-02-19 06:06:06 Found nearest node (204013059) to point (36.35521525, -82.37348719)
+2021-02-19 06:06:06 Found nearest node (2402075819) to point (36.3049161, -82.3874892)
+2021-02-19 06:06:06 Found nearest node (2405534826) to point (36.35003818, -82.37211291)
+2021-02-19 06:06:06 Found nearest node (2405288504) to point (36.33854073, -82.40328037)
+2021-02-19 06:06:06 Found nearest node (203980428) to point (36.351669, -82.370903)
+2021-02-19 06:06:06 Found nearest node (2030099438) to point (36.31587997, -82.39096867)
+2021-02-19 06:06:06 Found nearest node (203989183) to point (36.30689139, -82.36515662)
+2021-02-19 06:06:06 Found nearest node (203965210) to point (36.30910511, -82.39841053)
+2021-02-19 06:06:06 Found nearest node (2405276713) to point (36.34067819, -82.39840076)
+2021-02-19 06:06:06 Found nearest node (2405276713) to point (36.34073133, -82.3983999)
+2021-02-19 06:06:06 Found nearest node (203996723) to point (36.36497043, -82.38123284)
+2021-02-19 06:06:06 Found nearest node (204025819) to point (36.3790394, -82.4256193)
+2021-02-19 06:06:06 Found nearest node (6612143729) to point (36.31652865, -82.35195127)
+2021-02-19 06:06:06 Found nearest node (204015969) to point (36.32034629, -82.35488939)
+2021-02-19 06:06:06 Found nearest node (203974717) to point (36.319957, -82.357684)
+2021-02-19 06:06:06 Found nearest node (203978466) to point (36.318791, -82.347113)
+2021-02-19 06:06:06 Found nearest node (204000165) to point (36.31658165, -82.37235352)
+2021-02-19 06:06:06 Found nearest node (1271620020) to point (36.3016612, -82.3378302)
+2021-02-19 06:06:06 Found nearest node (1247210027) to point (36.30837207, -82.38576411)
+2021-02-19 06:06:06 Found nearest node (204019752) to point (36.34997658, -82.3736047)
+2021-02-19 06:06:06 Found nearest node (203959303) to point (36.35330624, -82.37561378)
+2021-02-19 06:06:06 Found nearest node (203959303) to point (36.3539211, -82.3753026)
+2021-02-19 06:06:06 Found nearest node (2405404965) to point (36.34272181, -82.39928527)
+There were 32 unique points found.
+Random seed is: 1613732766088069000
+First 3 values are: 4, 3, 7
+Generation Stuff: (Gen #: 0, Fitness: 62.71905820054541, Best: (62.71905820054541, #0))
+Generation Stuff: (Gen #: 10, Fitness: 33.82485180753293, Best: (33.82485180753293, #10))
+Generation Stuff: (Gen #: 20, Fitness: 18.92160497331697, Best: (18.92160497331697, #20))
+Generation Stuff: (Gen #: 30, Fitness: 12.219303715220777, Best: (12.219303715220777, #29))
+Generation Stuff: (Gen #: 40, Fitness: 11.253867399329094, Best: (11.253867399329094, #40))
+Generation Stuff: (Gen #: 50, Fitness: 10.952775701748298, Best: (10.952775701748298, #45))
+Generation Stuff: (Gen #: 60, Fitness: 10.952775701748298, Best: (10.952775701748298, #45))
+Generation Stuff: (Gen #: 70, Fitness: 10.198477653127268, Best: (10.198477653127268, #69))
+Generation Stuff: (Gen #: 80, Fitness: 7.049410524240494, Best: (7.049410524240494, #79))
+Generation Stuff: (Gen #: 90, Fitness: 7.049410524240494, Best: (7.049410524240494, #79))
+Generation Stuff: (Gen #: 100, Fitness: 7.049410524240494, Best: (7.049410524240494, #79))
+Generation Stuff: (Gen #: 110, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 120, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 130, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 140, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 150, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 160, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 170, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 180, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 190, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 200, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 210, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 220, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 230, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 240, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 250, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 260, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 270, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 280, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 290, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 300, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 310, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 320, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 330, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 340, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 350, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 360, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 370, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 380, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 390, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 400, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 410, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 420, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 430, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 440, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 450, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 460, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 470, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 480, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 490, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 500, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 510, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 520, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 530, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 540, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 550, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 560, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 570, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 580, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 590, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 600, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 610, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 620, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 630, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 640, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 650, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 660, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 670, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 680, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 690, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 700, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 710, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 720, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 730, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 740, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 750, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 760, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 770, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 780, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 790, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 800, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 810, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 820, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 830, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 840, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 850, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 860, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 870, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 880, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 890, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 900, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 910, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 920, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 930, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 940, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 950, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 960, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 970, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 980, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
+Generation Stuff: (Gen #: 990, Fitness: 6.998087563271459, Best: (6.998087563271459, #109))
