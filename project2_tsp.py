@@ -441,6 +441,36 @@ def mutate(chromosome, recursiveChance=0.8, majorMutationChance=0.7):
     return mutant_child
 
 
+def uniq(lst):
+    '''
+        Removes duplicates from a sorted list.
+        Code written by Stack Overflow user user4815162342
+        in a response to the Nov. 2012 Question:
+            "TypeError: unhashable type: 'list' when using built-in set function"
+
+        https://stackoverflow.com/questions/13464152/typeerror-unhashable-type-list-when-using-built-in-set-function
+    '''
+    last = object()
+    for item in lst:
+        if item == last:
+            continue
+        yield item
+        last = item
+
+
+def get_homogeneity(gen):
+    '''
+    Calculate the level of homogeneity for a given generation.
+    Aka, The fraction of the population that is not unique.
+    '''
+    pop = generations[gen]
+    popSet = list(uniq(pop))
+    ucp = len(popSet)  # Number of unique creatures in the population
+    homogeneity = ucp / POPULATION_SIZE
+    homogeneity = 1 - homogeneity
+    return homogeneity
+
+
 def run_ga():
     """
     Initialize and repopulate until you have reached the maximum generations
@@ -477,8 +507,13 @@ def run_ga():
 
         # Display text update
         if gen % textDisplayRate == 0:
-            print(
-                f"Generation Stuff: (Gen #: {gen}, Fitness: {currentFitness}, Best: ({lowestFitness}, #{lowestFitnessGen}))")
+            # Calculate the current homogenity level
+            homogeneity = get_homogeneity(gen) * 100  # Multiply by 100 to convert to a percentage
+            # Display the information update
+            print((
+                f"Generation Stuff: (Gen #: {gen}, Fitness: {currentFitness}, "
+                f"homogeneity: {homogeneity:.2f}%, "
+                f"Best: ({lowestFitness}, #{lowestFitnessGen}))"))
 
         # Display graph update
         # Only update if the latest graph is different from the previous generation's graph.
