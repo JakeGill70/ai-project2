@@ -333,7 +333,7 @@ def crossover(p1, p2):
     crossOverPoint1 = RANDOM.randint(0, int(chromosomeSize/2))
     # Choose a 2nd crossover point after the first
     crossOverPoint2 = RANDOM.randint(
-        crossOverPoint1 + 1, chromosomeSize),
+        crossOverPoint1 + 1, chromosomeSize)
 
     # *** Create Child ***
     # Make empty chromosome
@@ -341,6 +341,7 @@ def crossover(p1, p2):
     # Copy genes directly from parent B
     for i in range(crossOverPoint1, crossOverPoint2):
         child[i] = parentBChromosome[i]
+
     # Copy remaining genes from parent A as needed
     ci = 0  # Child Index
     ai = 0  # Parent A Index
