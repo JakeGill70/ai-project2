@@ -370,24 +370,41 @@ def run_ga():
     """
     initialize_population()
 
+    # Use these variables to keep track of the lowest fitness found so far
     lowestFitness = 1000000
     lowestFitnessGen = -1
+    # Use this variable to track if it is necessary to display a new graph
     lowestFitnessPrevGraph = 110000
-    textDisplayRate = int(DISPLAY_RATE / 10)
+    # Use these variables to determine how often an update should be displayed
+    # ? I found it useful to keep these seperated, as I often wanted detailed
+    # ?  written info, but didn't necessarily need to see the graph. This
+    # ?  allowed me to strike a balance between extra information and
+    # ?  and wasted cycles displaying an unnecessary graph.
     graphDisplayRate = DISPLAY_RATE
+    textDisplayRate = int(DISPLAY_RATE / 10)
 
+    # For every generation
     for gen in range(GENERATIONS - 1):  # Note, you already ran generation 1
+
+        # Create a new generation based on the previous generation
+        # Note that +1 needs to be added because generation 0 is the initialized generation.
+        # FIXME: Couldn't I just update the for loop to use range(0, ...) to remove the +1 here?
         repopulate(gen + 1)
 
+        # Determine the best fitness of this generation
         currentFitness = generations[gen][0][1]
+        # Update the best fitness found so far if necessary
         if(currentFitness < lowestFitness):
             lowestFitness = currentFitness
             lowestFitnessGen = gen
 
+        # Display text update
         if gen % textDisplayRate == 0:
             print(
                 f"Generation Stuff: (Gen #: {gen}, Fitness: {currentFitness}, Best: ({lowestFitness}, #{lowestFitnessGen}))")
 
+        # Display graph update
+        # Only update if the latest graph is different from the previous generation's graph.
         if gen % graphDisplayRate == 0 and lowestFitness < lowestFitnessPrevGraph:
             lowestFitnessPrevGraph = lowestFitness
             show_route(gen)
