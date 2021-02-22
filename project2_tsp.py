@@ -54,8 +54,17 @@ generations = []            # A list of populations, ultimately of size GENERATI
 population = []             # The current population of size POPULATION_SIZE
 # Represented as a list of index values that correspond to the points list
 chromosome = []
+# Dynamically store fitness results for each chromosome
+fitnessScores = {}
 
-FITNESS_SCORES = {}
+
+def resetInitialListParams():
+    points = []
+    generations = []
+    population = []
+    chromosome = []
+    RANDOM_SEED = time.time_ns()
+    RANDOM = random.Random(RANDOM_SEED)
 
 
 def plot_path(lat, long, origin_point, destination_point, fitness):
@@ -166,8 +175,8 @@ def calculate_fitness(chromosome):
     # Check if this chromosome has been calculated before,
     # Then just return the result if it had
     chromosomeTuple = tuple(chromosome)
-    if(chromosomeTuple in FITNESS_SCORES):
-        return [chromosome, FITNESS_SCORES[chromosomeTuple]]
+    if(chromosomeTuple in fitnessScores):
+        return [chromosome, fitnessScores[chromosomeTuple]]
 
     fitness = 0.0
 
@@ -186,7 +195,7 @@ def calculate_fitness(chromosome):
     fitness += get_distance(origin_id, lastNodeId)
 
     # Save the score for this chromosome to prevent recalculation in the future
-    FITNESS_SCORES[chromosomeTuple] = fitness
+    fitnessScores[chromosomeTuple] = fitness
 
     return [chromosome, fitness]
 
@@ -497,8 +506,8 @@ def run_ga():
     # ?  written info, but didn't necessarily need to see the graph. This
     # ?  allowed me to strike a balance between extra information and
     # ?  and wasted cycles displaying an unnecessary graph.
-    graphDisplayRate = DISPLAY_RATE
-    textDisplayRate = int(DISPLAY_RATE / 10)
+    graphDisplayRate = 250
+    textDisplayRate = 10
 
     # For every generation
     for gen in range(GENERATIONS - 1):  # Note, you already ran generation 1
@@ -508,28 +517,29 @@ def run_ga():
         # FIXME: Couldn't I just update the for loop to use range(0, ...) to remove the +1 here?
         repopulate(gen + 1)
 
-        # Determine the best fitness of this generation
-        currentFitness = generations[gen][0][1]
-        # Update the best fitness found so far if necessary
-        if(currentFitness < lowestFitness):
-            lowestFitness = currentFitness
-            lowestFitnessGen = gen
+        # ! Temp disabled because of looping of entire algorithm
+        # # Determine the best fitness of this generation
+        # currentFitness = generations[gen][0][1]
+        # # Update the best fitness found so far if necessary
+        # if(currentFitness < lowestFitness):
+        #     lowestFitness = currentFitness
+        #     lowestFitnessGen = gen
 
-        # Display text update
-        if gen % textDisplayRate == 0:
-            # Calculate the current homogenity level
-            # rm homogeneity = get_homogeneity(gen) * 100  # Multiply by 100 to convert to a percentage
-            # Display the information update
-            print((
-                f"Generation Stuff: (Gen #: {gen}, Fitness: {currentFitness}, "
-                # rm f"homogeneity: {homogeneity:.2f}%, "
-                f"Best: ({lowestFitness}, #{lowestFitnessGen}))"))
+        # # Display text update
+        # if gen % textDisplayRate == 0:
+        #     # Calculate the current homogenity level
+        #     # rm homogeneity = get_homogeneity(gen) * 100  # Multiply by 100 to convert to a percentage
+        #     # Display the information update
+        #     print((
+        #         f"Generation Stuff: (Gen #: {gen}, Fitness: {currentFitness}, "
+        #         # rm f"homogeneity: {homogeneity:.2f}%, "
+        #         f"Best: ({lowestFitness}, #{lowestFitnessGen}))"))
 
-        # Display graph update
-        # Only update if the latest graph is different from the previous generation's graph.
-        if gen % graphDisplayRate == 0 and lowestFitness < lowestFitnessPrevGraph:
-            lowestFitnessPrevGraph = lowestFitness
-            show_route(gen)
+        # # Display graph update
+        # # Only update if the latest graph is different from the previous generation's graph.
+        # if gen % graphDisplayRate == 0 and lowestFitness < lowestFitnessPrevGraph:
+        #     lowestFitnessPrevGraph = lowestFitness
+        #     show_route(gen)
 
 
 def show_route(generation_number):
@@ -559,6 +569,19 @@ def show_route(generation_number):
     print(f"Latest Top Chromosome: {the_route}")
 
 
+def saveResults(runCount, runTimeStr):
+    route = generations[len(generations-1)][0][0]
+    fitness = generations[len(generations-1)][0][1]
+    seed = RANDOM_SEED
+
+    f = open("results.txt", "a")
+    output = f"Run: {runCount}, Fitness: {fitness}, Time: {runTimeStr}, Seed: {seed}, Route: {route}"
+    f.write(output)
+    f.close()
+
+    print(output)
+
+
 def main():
     """
     Reads the csv file and then runs the genetic algorithm and displays results.
@@ -579,18 +602,27 @@ def main():
     print(f"Random seed is: {RANDOM_SEED}")
     print(f"First 3 values are: {RANDOM.randrange(0,10)}, {RANDOM.randrange(0,10)}, {RANDOM.randrange(0,10)}")
 
-    start_time = time.time()
-    run_ga()
+    # Count the number of algorithm runs in a loop
+    runCount = 1
+
+    total_start_time = time.time()
+    while True:
+        start_time = time.time()
+        # Run algorithm
+        run_ga()
+        # Calculate run time information
+        run_time = time.time() - start_time
+        total_Time = time.time() - total_start_time
+        end_Time_String = f"(Run: {math.floor(run_time / 60)}min {run_time % 60}sec, Total: {math.floor(total_Time / 60)}min {total_Time % 60}sec)"
+        # Save results to file
+        saveResults(runCount, end_Time_String)
+        # Reset
+        resetInitialListParams()
     # show_route(0)
     # show_route(math.floor(GENERATIONS/2))
     show_route(GENERATIONS-1)
 
     plot_ga()
-
-    end_time = time.time()
-    run_time = end_time - start_time
-    minutes = math.floor(run_time / 60)
-    seconds = run_time % 60
 
     print(f"Run time: {minutes}min {seconds}sec")
 
