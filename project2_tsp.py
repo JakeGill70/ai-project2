@@ -55,6 +55,8 @@ population = []             # The current population of size POPULATION_SIZE
 # Represented as a list of index values that correspond to the points list
 chromosome = []
 
+FITNESS_SCORES = {}
+
 
 def plot_path(lat, long, origin_point, destination_point, fitness):
     """
@@ -161,6 +163,12 @@ def calculate_fitness(chromosome):
     """
     # ! Points format = [(nodeId, {street_count, x, y}), ...]
 
+    # Check if this chromosome has been calculated before,
+    # Then just return the result if it had
+    chromosomeTuple = tuple(chromosome)
+    if(chromosomeTuple in FITNESS_SCORES):
+        return [chromosome, FITNESS_SCORES[chromosomeTuple]]
+
     fitness = 0.0
 
     # Calculate the distance from the origin to the first node in the chromosome
@@ -176,6 +184,9 @@ def calculate_fitness(chromosome):
     # Calculate the distance from the destination to the last node in the chromosome
     lastNodeId = points[chromosome[-1]][0]
     fitness += get_distance(origin_id, lastNodeId)
+
+    # Save the score for this chromosome to prevent recalculation in the future
+    FITNESS_SCORES[chromosomeTuple] = fitness
 
     return [chromosome, fitness]
 
