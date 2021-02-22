@@ -569,12 +569,20 @@ def main():
     print(f"Random seed is: {RANDOM_SEED}")
     print(f"First 3 values are: {RANDOM.randrange(0,10)}, {RANDOM.randrange(0,10)}, {RANDOM.randrange(0,10)}")
 
+    start_time = time.time()
     run_ga()
     # show_route(0)
     # show_route(math.floor(GENERATIONS/2))
     show_route(GENERATIONS-1)
 
     plot_ga()
+
+    end_time = time.time()
+    run_time = end_time - start_time
+    minutes = math.floor(run_time / 60)
+    seconds = run_time % 60
+
+    print(f"Run time: {minutes}min {seconds}sec")
 
 
 main()
