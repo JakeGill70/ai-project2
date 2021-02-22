@@ -397,46 +397,45 @@ def mutate(chromosome, recursiveChance=0.8, majorMutationChance=0.7):
     #  Come back and fix this when convient.
 
     # Start with an exact copy of the original chromosome
-    mutant_child = [x for x in chromosome]
+    mutant_child = chromosome.copy()
 
-    # Determine if this is a major mutation
-    isMajorChange = (RANDOM.random() <= majorMutationChance)
-    mutationIndex = 0
-    otherIndex = 0
+    recurse = True
+    while(recurse):
+        # Check to recurse
+        recursiveChance = recursiveChance/2
+        recurse = RANDOM.random() <= recursiveChance
 
-    if(isMajorChange):
-        # Pick a random genes to mutate
-        mutationIndex = RANDOM.randrange(len(chromosome))
-        otherIndex = RANDOM.randrange(len(chromosome))
-        # Make sure the genes aren't the same
-        while mutationIndex == otherIndex:
+        # Determine if this is a major mutation
+        isMajorChange = (RANDOM.random() <= majorMutationChance)
+        mutationIndex = 0
+        otherIndex = 0
+
+        if(isMajorChange):
+            # Pick a random genes to mutate
+            mutationIndex = RANDOM.randrange(len(chromosome))
             otherIndex = RANDOM.randrange(len(chromosome))
-        # Swap the genes at the random indices inside of the chromosome
-        swap_genes(mutationIndex, otherIndex, mutant_child)
+            # Make sure the genes aren't the same
+            while mutationIndex == otherIndex:
+                otherIndex = RANDOM.randrange(len(chromosome))
+            # Swap the genes at the random indices inside of the chromosome
+            swap_genes(mutationIndex, otherIndex, mutant_child)
 
-    else:  # if(isMinorChange)
-        # Pick a random gene to mutate
-        mutationIndex = RANDOM.randrange(len(chromosome))
-        # Randomly pick an adjacent gene to switch with
-        otherIndex = mutationIndex + (1 if bool(RANDOM.getrandbits(1)) else -1)
-        # Make sure the adjacentIndex is legal
-        if otherIndex >= len(chromosome):
-            otherIndex -= 2
-        if otherIndex < 0:
-            otherIndex += 2
-        # Swap the genes at the random indices inside of the chromosome
-        swap_genes(mutationIndex, otherIndex, mutant_child)
+        else:  # if(isMinorChange)
+            # Pick a random gene to mutate
+            mutationIndex = RANDOM.randrange(len(chromosome))
+            # Randomly pick an adjacent gene to switch with
+            otherIndex = mutationIndex + (1 if bool(RANDOM.getrandbits(1)) else -1)
+            # Make sure the adjacentIndex is legal
+            otherIndex = max(0, min(otherIndex, len(chromosome)-1))
+            # Swap the genes at the random indices inside of the chromosome
+            swap_genes(mutationIndex, otherIndex, mutant_child)
 
-    # Ensure that the mutated chromosome is valid
-    if not isValidChromosome(mutant_child):
-        raise RuntimeError(
-            (f"Mutant chromosome is not valid. isMajorMutation={isMajorChange}, "
-                f"MutationIndex={mutationIndex}, OtherIndex={otherIndex}, "
-                f"recurisveChance={recursiveChance}, mutant={mutant_child}"))
-
-    # Check to recurse
-    if(RANDOM.random() <= recursiveChance):
-        mutant_child = mutate(mutant_child, recursiveChance/2)
+        # Ensure that the mutated chromosome is valid
+        if not isValidChromosome(mutant_child):
+            raise RuntimeError(
+                (f"Mutant chromosome is not valid. isMajorMutation={isMajorChange}, "
+                    f"MutationIndex={mutationIndex}, OtherIndex={otherIndex}, "
+                    f"recurisveChance={recursiveChance}, mutant={mutant_child}"))
 
     return mutant_child
 
