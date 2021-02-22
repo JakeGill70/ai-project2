@@ -570,8 +570,8 @@ def show_route(generation_number):
 
 
 def saveResults(runCount, runTimeStr):
-    route = generations[len(generations-1)][0][0]
-    fitness = generations[len(generations-1)][0][1]
+    route = generations[len(generations)-1][0][0]
+    fitness = generations[len(generations)-1][0][1]
     seed = RANDOM_SEED
 
     f = open("results.txt", "a")
