@@ -518,11 +518,11 @@ def run_ga():
         # Display text update
         if gen % textDisplayRate == 0:
             # Calculate the current homogenity level
-            homogeneity = get_homogeneity(gen) * 100  # Multiply by 100 to convert to a percentage
+            # rm homogeneity = get_homogeneity(gen) * 100  # Multiply by 100 to convert to a percentage
             # Display the information update
             print((
                 f"Generation Stuff: (Gen #: {gen}, Fitness: {currentFitness}, "
-                f"homogeneity: {homogeneity:.2f}%, "
+                # rm f"homogeneity: {homogeneity:.2f}%, "
                 f"Best: ({lowestFitness}, #{lowestFitnessGen}))"))
 
         # Display graph update
