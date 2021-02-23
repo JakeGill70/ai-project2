@@ -35,6 +35,9 @@ POPULATION_SIZE = 400
 MUTATION_RATE = 0.8
 RANDOM_SEED = time.time_ns()
 RANDOM = random.Random(RANDOM_SEED)
+SAVE_RESULTS_TO_FILE = False
+RUN_FOREVER = False
+RUN_N_TIMES = 1
 TRACK_HOMOGENEITY = False/
 # Use these variables to determine how often an update should be displayed
 GRAPH_DISPLAY_RATE = 250
@@ -572,17 +575,32 @@ def show_route(generation_number):
     print(f"Latest Top Chromosome: {the_route}")
 
 
-def saveResults(runCount, runTimeStr):
+def showResults(runCount, runTime, totalTime):
+    # Get algorithmic run information
     route = generations[len(generations)-1][0][0]
     fitness = generations[len(generations)-1][0][1]
     seed = RANDOM_SEED
 
-    f = open("results.txt", "a")
-    output = f"Run: {runCount}, Fitness: {fitness}, Time: {runTimeStr}, Seed: {seed}, Route: {route}"
-    f.write(output)
-    f.close()
+    # Display Graphs
+    show_route(0)
+    show_route(math.floor(GENERATIONS/2))
+    show_route(GENERATIONS-1)
+    plot_ga()
 
+    # Print Results
+    output = (f"Run: {runCount}, ",
+              f"Fitness: {fitness}, ",
+              f"RunTime: {math.floor(runTime / 60)}min {round(runTime % 60)}sec, ",
+              f"TotalTime: {math.floor(totalTime / 60)}min {round(totalTime % 60)}sec",
+              f"Seed: {seed}, ",
+              f"Route: {route}\n")
     print(output)
+
+    # Save results to file
+    if(SAVE_RESULTS_TO_FILE):
+        f = open("results.txt", "a")
+        f.write(output)
+        f.close()
 
 
 def main():
@@ -607,27 +625,21 @@ def main():
 
     # Count the number of algorithm runs in a loop
     runCount = 1
-
+    # Note start time for all algorithm runs
     total_start_time = time.time()
-    while True:
+    while RUN_FOREVER or runCount <= RUN_N_TIMES:
+        # Note start time for current algorithm run
         start_time = time.time()
         # Run algorithm
         run_ga()
         # Calculate run time information
-        run_time = time.time() - start_time
-        total_Time = time.time() - total_start_time
-        end_Time_String = f"(Run: {math.floor(run_time / 60)}min {run_time % 60}sec, Total: {math.floor(total_Time / 60)}min {total_Time % 60}sec)"
-        # Save results to file
-        saveResults(runCount, end_Time_String)
+        runTime = time.time() - start_time
+        totalTime = time.time() - total_start_time
+        # Show Results
+        showResults(runCount, runTime, totalTime)
         # Reset
         resetInitialListParams()
-    # show_route(0)
-    # show_route(math.floor(GENERATIONS/2))
-    show_route(GENERATIONS-1)
-
-    plot_ga()
-
-    print(f"Run time: {minutes}min {seconds}sec")
+        runCount += 1
 
 
 main()
