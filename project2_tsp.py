@@ -16,7 +16,7 @@ import time
 # Created by: Brian Bennett
 # Last Modified by: Jake Gillenwater
 # Course: CSCI-5260-940, Artificial Intelligence
-# Date: 2/17/2021
+# Date: 2/22/2021
 # ========================================
 
 # -- Set up the initial map area and save it as a networkx graph
@@ -33,12 +33,13 @@ G = ox.graph_from_address(
 GENERATIONS = 500
 POPULATION_SIZE = 350
 MUTATION_RATE = 0.8
+# Program run time parameters
 RANDOM_SEED = time.time_ns()
 RANDOM = random.Random(RANDOM_SEED)
 SAVE_RESULTS_TO_FILE = False
 RUN_FOREVER = False
 RUN_N_TIMES = 1
-TRACK_HOMOGENEITY = False/
+TRACK_HOMOGENEITY = False
 # Use these variables to determine how often an update should be displayed
 GRAPH_DISPLAY_RATE = 250
 TEXT_DISPLAY_RATE = 10
@@ -211,7 +212,6 @@ def calculate_fitness(chromosome):
     return [chromosome, fitness]
 
 
-# initialize population
 def initialize_population():
     """
     Initialize the population by creating POPULATION_SIZE chromosomes.
