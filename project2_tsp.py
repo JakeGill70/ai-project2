@@ -30,8 +30,8 @@ G = ox.graph_from_address(
 # plt.show()
 
 # -- Genetic Algorithm Parameters
-GENERATIONS = 1000
-POPULATION_SIZE = 400
+GENERATIONS = 500
+POPULATION_SIZE = 350
 MUTATION_RATE = 0.8
 RANDOM_SEED = time.time_ns()
 RANDOM = random.Random(RANDOM_SEED)
