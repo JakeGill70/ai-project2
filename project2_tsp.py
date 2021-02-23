@@ -590,14 +590,14 @@ def showResults(runCount, runTime, totalTime):
         plot_ga()
 
     # Print Results
-    output = (f"Run: {runCount}, ",
-              f"Fitness: {fitness}, ",
-              f"RunTime: {math.floor(runTime / 60)}min {round(runTime % 60)}sec, ",
-              f"TotalTime: {math.floor(totalTime / 60)}min {round(totalTime % 60)}sec",
-              f"Seed: {seed}, ",
-              f"Generations: {GENERATIONS}, ",
-              f"Population Size: {POPULATION_SIZE}, ",
-              f"Mutation Rate: {MUTATION_RATE}, ",
+    output = (f"Run: {runCount}, "
+              f"Fitness: {fitness}, "
+              f"RunTime: {math.floor(runTime / 60)}min {round(runTime % 60)}sec, "
+              f"TotalTime: {math.floor(totalTime / 60)}min {round(totalTime % 60)}sec, "
+              f"Seed: {seed}, "
+              f"Generations: {GENERATIONS}, "
+              f"Population Size: {POPULATION_SIZE}, "
+              f"Mutation Rate: {MUTATION_RATE}, "
               f"Route: {route}\n")
     print(output)
 
