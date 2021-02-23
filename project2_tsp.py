@@ -41,6 +41,7 @@ RUN_FOREVER = False
 RUN_N_TIMES = 1
 TRACK_HOMOGENEITY = False
 # Use these variables to determine how often an update should be displayed
+SHOW_GRAPHS = False
 GRAPH_DISPLAY_RATE = 250
 TEXT_DISPLAY_RATE = 10
 
@@ -543,7 +544,7 @@ def run_ga():
 
         # Display graph update
         # Only update if the latest graph is different from the previous generation's graph.
-        if gen % GRAPH_DISPLAY_RATE == 0 and lowestFitness < lowestFitnessPrevGraph:
+        if SHOW_GRAPHS and gen % GRAPH_DISPLAY_RATE == 0 and lowestFitness < lowestFitnessPrevGraph:
             lowestFitnessPrevGraph = lowestFitness
             show_route(gen)
 
@@ -582,10 +583,11 @@ def showResults(runCount, runTime, totalTime):
     seed = RANDOM_SEED
 
     # Display Graphs
-    show_route(0)
-    show_route(math.floor(GENERATIONS/2))
-    show_route(GENERATIONS-1)
-    plot_ga()
+    if SHOW_GRAPHS:
+        show_route(0)
+        show_route(math.floor(GENERATIONS/2))
+        show_route(GENERATIONS-1)
+        plot_ga()
 
     # Print Results
     output = (f"Run: {runCount}, ",
