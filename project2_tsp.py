@@ -33,9 +33,13 @@ G = ox.graph_from_address(
 GENERATIONS = 1000
 POPULATION_SIZE = 400
 MUTATION_RATE = 0.8
-DISPLAY_RATE = 100
 RANDOM_SEED = time.time_ns()
 RANDOM = random.Random(RANDOM_SEED)
+TRACK_HOMOGENEITY = False/
+# Use these variables to determine how often an update should be displayed
+GRAPH_DISPLAY_RATE = 250
+TEXT_DISPLAY_RATE = 10
+
 
 # -- Set up Origin and Destination Points
 origin_point = (36.3044549, -82.3632187)  # Start at ETSU
@@ -514,29 +518,31 @@ def run_ga():
         # FIXME: Couldn't I just update the for loop to use range(0, ...) to remove the +1 here?
         repopulate(gen + 1)
 
-        # ! Temp disabled because of looping of entire algorithm
-        # # Determine the best fitness of this generation
-        # currentFitness = generations[gen][0][1]
-        # # Update the best fitness found so far if necessary
-        # if(currentFitness < lowestFitness):
-        #     lowestFitness = currentFitness
-        #     lowestFitnessGen = gen
+        # Determine the best fitness of this generation
+        currentFitness = generations[gen][0][1]
+        # Update the best fitness found so far if necessary
+        if(currentFitness < lowestFitness):
+            lowestFitness = currentFitness
+            lowestFitnessGen = gen
 
-        # # Display text update
-        # if gen % textDisplayRate == 0:
-        #     # Calculate the current homogenity level
-        #     # rm homogeneity = get_homogeneity(gen) * 100  # Multiply by 100 to convert to a percentage
-        #     # Display the information update
-        #     print((
-        #         f"Generation Stuff: (Gen #: {gen}, Fitness: {currentFitness}, "
-        #         # rm f"homogeneity: {homogeneity:.2f}%, "
-        #         f"Best: ({lowestFitness}, #{lowestFitnessGen}))"))
+        # Display text update
+        if gen % TEXT_DISPLAY_RATE == 0:
+            # Start output string
+            outputString = f"Generation Stuff: (Gen #: {gen}, Fitness: {currentFitness}, "
+            # Add homogeneity stats as needed
+            if(TRACK_HOMOGENEITY):
+                # Calculate the current homogenity level
+                homogeneity = get_homogeneity(gen) * 100  # Multiply by 100 to convert to a percentage
+                outputString += f"homogeneity: {homogeneity:.2f}%, "
+            # Display the information update
+            outputString += f"Best: ({lowestFitness}, #{lowestFitnessGen}))"
+            print(outputString)
 
-        # # Display graph update
-        # # Only update if the latest graph is different from the previous generation's graph.
-        # if gen % graphDisplayRate == 0 and lowestFitness < lowestFitnessPrevGraph:
-        #     lowestFitnessPrevGraph = lowestFitness
-        #     show_route(gen)
+        # Display graph update
+        # Only update if the latest graph is different from the previous generation's graph.
+        if gen % GRAPH_DISPLAY_RATE == 0 and lowestFitness < lowestFitnessPrevGraph:
+            lowestFitnessPrevGraph = lowestFitness
+            show_route(gen)
 
 
 def show_route(generation_number):
