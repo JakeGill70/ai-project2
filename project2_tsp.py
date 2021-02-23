@@ -59,7 +59,11 @@ fitnessScores = {}
 
 
 def resetInitialListParams():
-    points = []
+    global generations
+    global population
+    global chromosome
+    global RANDOM_SEED
+    global RANDOM
     generations = []
     population = []
     chromosome = []
@@ -501,13 +505,6 @@ def run_ga():
     lowestFitnessGen = -1
     # Use this variable to track if it is necessary to display a new graph
     lowestFitnessPrevGraph = 110000
-    # Use these variables to determine how often an update should be displayed
-    # ? I found it useful to keep these seperated, as I often wanted detailed
-    # ?  written info, but didn't necessarily need to see the graph. This
-    # ?  allowed me to strike a balance between extra information and
-    # ?  and wasted cycles displaying an unnecessary graph.
-    graphDisplayRate = 250
-    textDisplayRate = 10
 
     # For every generation
     for gen in range(GENERATIONS - 1):  # Note, you already ran generation 1
