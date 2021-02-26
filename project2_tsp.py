@@ -36,9 +36,9 @@ MUTATION_RATE = 0.8
 # Program run time parameters
 RANDOM_SEED = time.time_ns()
 RANDOM = random.Random(RANDOM_SEED)
-SAVE_RESULTS_TO_FILE = False
+SAVE_RESULTS_TO_FILE = True
 RUN_FOREVER = False
-RUN_N_TIMES = 1
+RUN_N_TIMES = 50
 TRACK_HOMOGENEITY = False
 # Use these variables to determine how often an update should be displayed
 SHOW_GRAPHS = False
